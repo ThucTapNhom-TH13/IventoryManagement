@@ -1,0 +1,5 @@
+c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\bin\Debug\Entity.dll
+c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\bin\Debug\Entity.pdb
+c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\obj\Debug\Entity.dll
+c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\obj\Debug\Entity.pdb
