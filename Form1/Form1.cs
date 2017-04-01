@@ -20,6 +20,9 @@ namespace Form1
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            PhieuXuat_initTextboxStatus(false, false);
+
+
             Load_BangPhieuXuat();
         }
 
@@ -186,6 +189,36 @@ namespace Form1
 
         /// H.Linh - added
 
+        public void PhieuXuat_initTextboxStatus(bool status1, bool status2)
+        {
+            maPhieuXuat_txt.Enabled = false;
+            ngayXuat_datepicker.Enabled = status1;
+            lyDo_txt.Enabled = status1;
+            maKho_txt.Enabled = status1;
+            maKH_txt.Enabled = status1;
+            maHang_txt.Enabled = status2;
+            soLuong_txt.Enabled = status2;
+            donGia_txt.Enabled = status2;
+        }
+
+        public void PhieuXuat_clearTextBoxValues(bool status1, bool status2)
+        {
+            if (status1)
+            {
+                maPhieuXuat_txt.Clear();
+                lyDo_txt.Clear();
+                maKho_txt.Clear();
+                maKH_txt.Clear();
+            }
+            if (status2)
+            {
+                maHang_txt.Clear();
+                soLuong_txt.Clear();
+                donGia_txt.Clear();
+            }
+            
+        }
+
         private void Load_BangPhieuXuat()
         {
             DataView table = PhieuXuat_BUS.PhieuXuat_getAll();
@@ -253,6 +286,98 @@ namespace Form1
             {
                 dongia = bangChiTietPhieuNhap.Rows[CurrentIndex].Cells[3].Value.ToString();
                 donGia_txt.Text = dongia;
+            }
+        }
+
+        private void PX_button1_Click(object sender, EventArgs e)
+        {
+            if (PX_button1.Text.Equals("Thêm"))
+            {
+                PX_button1.Text = "Lưu";
+                PX_button2.Text = "Hủy";
+                PhieuXuat_initTextboxStatus(true, false);
+            }
+            else if (PX_button1.Text.Equals("Hủy"))
+            {
+                PX_button1.Text = "Thêm";
+                PX_button2.Text = "Sửa";
+                PhieuXuat_initTextboxStatus(false, false);
+                PhieuXuat_clearTextBoxValues(true, true);
+            }
+            else if (PX_button1.Text.Equals("Lưu"))
+            {
+                //dosmt
+            }
+        }
+
+        private void PX_button2_Click(object sender, EventArgs e)
+        {
+            if (PX_button2.Text.Equals("Sửa"))
+            {
+                String mapx = maPhieuXuat_txt.Text.ToString();
+                if (!"".Equals(mapx.Trim()))
+                {
+                    PX_button1.Text = "Hủy";
+                    PX_button2.Text = "Lưu";
+                    PhieuXuat_initTextboxStatus(true, false);
+                }
+            }
+            else if (PX_button2.Text.Equals("Hủy"))
+            {
+                PX_button1.Text = "Thêm";
+                PX_button2.Text = "Sửa";
+                PhieuXuat_initTextboxStatus(false, false);
+                PhieuXuat_clearTextBoxValues(true, true);
+            }
+            else if (PX_button2.Text.Equals("Lưu"))
+            {
+                //dosmt
+            }
+        }
+
+        private void CTPX_button1_Click(object sender, EventArgs e)
+        {
+            if (CTPX_button1.Text.Equals("Thêm"))
+            {
+                CTPX_button1.Text = "Lưu";
+                CTPX_button2.Text = "Hủy";
+                PhieuXuat_initTextboxStatus(false, true);
+            }
+            else if (CTPX_button1.Text.Equals("Hủy"))
+            {
+                CTPX_button1.Text = "Thêm";
+                CTPX_button2.Text = "Sửa";
+                PhieuXuat_initTextboxStatus(false, false);
+                PhieuXuat_clearTextBoxValues(false, true);
+            }
+            else if (CTPX_button1.Text.Equals("Lưu"))
+            {
+                //dosmt
+            }
+        }
+
+        private void CTPX_button2_Click(object sender, EventArgs e)
+        {
+            if (CTPX_button2.Text.Equals("Sửa"))
+            {
+                String mapx = maPhieuXuat_txt.Text.ToString();
+                if (!"".Equals(mapx.Trim()))
+                {
+                    CTPX_button1.Text = "Hủy";
+                    CTPX_button2.Text = "Lưu";
+                    PhieuXuat_initTextboxStatus(false, true);
+                }
+            }
+            else if (CTPX_button2.Text.Equals("Hủy"))
+            {
+                CTPX_button1.Text = "Thêm";
+                CTPX_button2.Text = "Sửa";
+                PhieuXuat_initTextboxStatus(false, false);
+                PhieuXuat_clearTextBoxValues(false, true);
+            }
+            else if (CTPX_button2.Text.Equals("Lưu"))
+            {
+                //dosmt
             }
         }
     }

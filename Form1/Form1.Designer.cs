@@ -145,9 +145,9 @@
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
+            this.CTPX_button3 = new System.Windows.Forms.Button();
+            this.CTPX_button2 = new System.Windows.Forms.Button();
+            this.CTPX_button1 = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -156,9 +156,9 @@
             this.maHang_txt = new System.Windows.Forms.TextBox();
             this.bangChiTietPhieuNhap = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
+            this.PX_button3 = new System.Windows.Forms.Button();
+            this.PX_button2 = new System.Windows.Forms.Button();
+            this.PX_button1 = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
             this.maKH_txt = new System.Windows.Forms.TextBox();
             this.ngayXuat_datepicker = new System.Windows.Forms.DateTimePicker();
@@ -1344,9 +1344,9 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button28);
-            this.groupBox7.Controls.Add(this.button29);
-            this.groupBox7.Controls.Add(this.button30);
+            this.groupBox7.Controls.Add(this.CTPX_button3);
+            this.groupBox7.Controls.Add(this.CTPX_button2);
+            this.groupBox7.Controls.Add(this.CTPX_button1);
             this.groupBox7.Controls.Add(this.label41);
             this.groupBox7.Controls.Add(this.label42);
             this.groupBox7.Controls.Add(this.label43);
@@ -1361,32 +1361,34 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Chi tiết phiếu nhập";
             // 
-            // button28
+            // CTPX_button3
             // 
-            this.button28.Location = new System.Drawing.Point(219, 187);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(75, 31);
-            this.button28.TabIndex = 28;
-            this.button28.Text = "Xóa";
-            this.button28.UseVisualStyleBackColor = true;
+            this.CTPX_button3.Location = new System.Drawing.Point(219, 187);
+            this.CTPX_button3.Name = "CTPX_button3";
+            this.CTPX_button3.Size = new System.Drawing.Size(75, 31);
+            this.CTPX_button3.TabIndex = 28;
+            this.CTPX_button3.Text = "Xóa";
+            this.CTPX_button3.UseVisualStyleBackColor = true;
             // 
-            // button29
+            // CTPX_button2
             // 
-            this.button29.Location = new System.Drawing.Point(113, 187);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(75, 31);
-            this.button29.TabIndex = 27;
-            this.button29.Text = "Sửa";
-            this.button29.UseVisualStyleBackColor = true;
+            this.CTPX_button2.Location = new System.Drawing.Point(113, 187);
+            this.CTPX_button2.Name = "CTPX_button2";
+            this.CTPX_button2.Size = new System.Drawing.Size(75, 31);
+            this.CTPX_button2.TabIndex = 27;
+            this.CTPX_button2.Text = "Sửa";
+            this.CTPX_button2.UseVisualStyleBackColor = true;
+            this.CTPX_button2.Click += new System.EventHandler(this.CTPX_button2_Click);
             // 
-            // button30
+            // CTPX_button1
             // 
-            this.button30.Location = new System.Drawing.Point(9, 187);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 31);
-            this.button30.TabIndex = 26;
-            this.button30.Text = "Thêm";
-            this.button30.UseVisualStyleBackColor = true;
+            this.CTPX_button1.Location = new System.Drawing.Point(9, 187);
+            this.CTPX_button1.Name = "CTPX_button1";
+            this.CTPX_button1.Size = new System.Drawing.Size(75, 31);
+            this.CTPX_button1.TabIndex = 26;
+            this.CTPX_button1.Text = "Thêm";
+            this.CTPX_button1.UseVisualStyleBackColor = true;
+            this.CTPX_button1.Click += new System.EventHandler(this.CTPX_button1_Click);
             // 
             // label41
             // 
@@ -1450,9 +1452,9 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button25);
-            this.groupBox6.Controls.Add(this.button26);
-            this.groupBox6.Controls.Add(this.button27);
+            this.groupBox6.Controls.Add(this.PX_button3);
+            this.groupBox6.Controls.Add(this.PX_button2);
+            this.groupBox6.Controls.Add(this.PX_button1);
             this.groupBox6.Controls.Add(this.label44);
             this.groupBox6.Controls.Add(this.maKH_txt);
             this.groupBox6.Controls.Add(this.ngayXuat_datepicker);
@@ -1471,32 +1473,34 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Phiếu nhập";
             // 
-            // button25
+            // PX_button3
             // 
-            this.button25.Location = new System.Drawing.Point(219, 246);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 31);
-            this.button25.TabIndex = 29;
-            this.button25.Text = "Xóa";
-            this.button25.UseVisualStyleBackColor = true;
+            this.PX_button3.Location = new System.Drawing.Point(219, 246);
+            this.PX_button3.Name = "PX_button3";
+            this.PX_button3.Size = new System.Drawing.Size(75, 31);
+            this.PX_button3.TabIndex = 29;
+            this.PX_button3.Text = "Xóa";
+            this.PX_button3.UseVisualStyleBackColor = true;
             // 
-            // button26
+            // PX_button2
             // 
-            this.button26.Location = new System.Drawing.Point(113, 246);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 31);
-            this.button26.TabIndex = 28;
-            this.button26.Text = "Sửa";
-            this.button26.UseVisualStyleBackColor = true;
+            this.PX_button2.Location = new System.Drawing.Point(113, 246);
+            this.PX_button2.Name = "PX_button2";
+            this.PX_button2.Size = new System.Drawing.Size(75, 31);
+            this.PX_button2.TabIndex = 28;
+            this.PX_button2.Text = "Sửa";
+            this.PX_button2.UseVisualStyleBackColor = true;
+            this.PX_button2.Click += new System.EventHandler(this.PX_button2_Click);
             // 
-            // button27
+            // PX_button1
             // 
-            this.button27.Location = new System.Drawing.Point(9, 246);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 31);
-            this.button27.TabIndex = 27;
-            this.button27.Text = "Thêm";
-            this.button27.UseVisualStyleBackColor = true;
+            this.PX_button1.Location = new System.Drawing.Point(9, 246);
+            this.PX_button1.Name = "PX_button1";
+            this.PX_button1.Size = new System.Drawing.Size(75, 31);
+            this.PX_button1.TabIndex = 27;
+            this.PX_button1.Text = "Thêm";
+            this.PX_button1.UseVisualStyleBackColor = true;
+            this.PX_button1.Click += new System.EventHandler(this.PX_button1_Click);
             // 
             // label44
             // 
@@ -1519,7 +1523,7 @@
             // 
             this.ngayXuat_datepicker.Location = new System.Drawing.Point(112, 69);
             this.ngayXuat_datepicker.Name = "ngayXuat_datepicker";
-            this.ngayXuat_datepicker.Size = new System.Drawing.Size(200, 21);
+            this.ngayXuat_datepicker.Size = new System.Drawing.Size(171, 21);
             this.ngayXuat_datepicker.TabIndex = 24;
             // 
             // label36
@@ -1963,12 +1967,12 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button CTPX_button3;
+        private System.Windows.Forms.Button CTPX_button2;
+        private System.Windows.Forms.Button CTPX_button1;
+        private System.Windows.Forms.Button PX_button3;
+        private System.Windows.Forms.Button PX_button2;
+        private System.Windows.Forms.Button PX_button1;
         private System.Windows.Forms.Button btnXoa_CTVT;
         private System.Windows.Forms.Button btnSua_CTVT;
         private System.Windows.Forms.Button btnThem_CTVT;

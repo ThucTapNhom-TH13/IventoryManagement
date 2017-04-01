@@ -7,12 +7,10 @@ c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManage
 c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Form1\obj\Debug\Form1.csproj.GenerateResource.Cache
 c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Form1\obj\Debug\Form1.exe
 c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Form1\obj\Debug\Form1.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Form1.exe.config
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Form1.exe
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Form1.pdb
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\BUS.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Entity.dll
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\DALL.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Entity.dll
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\BUS.pdb
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Entity.pdb
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\DALL.pdb
@@ -22,3 +20,5 @@ C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\obj\Debug\Form
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\obj\Debug\Form1.csproj.GenerateResource.Cache
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\obj\Debug\Form1.exe
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\obj\Debug\Form1.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Form1.exe.config
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\bin\Debug\Form1.pdb
