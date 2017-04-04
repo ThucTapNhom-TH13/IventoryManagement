@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,6 +14,16 @@ namespace BUS
         {
             int maPhieuXuat = Convert.ToInt32(mapx);
             return DALL.ChiTietPhieuXuat_DAO.chiTietPhieuXuat_findOne(maPhieuXuat);
+        }
+
+        public static Boolean add(ChiTietPhieuXuat chiTiet)
+        {
+            return DALL.ChiTietPhieuXuat_DAO.add(chiTiet);
+        }
+
+        public static bool edit(ChiTietPhieuXuat chiTiet)
+        {
+            return DALL.ChiTietPhieuXuat_DAO.edit(chiTiet);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity;
 
 namespace DALL
 {
@@ -23,6 +24,48 @@ namespace DALL
             da.Fill(dt);
             DataView dv = new DataView(dt);
             return dv;
+        }
+
+        public static bool edit(ChiTietPhieuXuat chiTiet)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+
+            SqlCommand cmd = new SqlCommand("ChiTietPhieuXuat_edit", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@maPX", chiTiet.MaPhieuXuat));
+            cmd.Parameters.Add(new SqlParameter("@maHang", chiTiet.MaHang));
+            cmd.Parameters.Add(new SqlParameter("@soLuong", chiTiet.SoLuong));
+            cmd.Parameters.Add(new SqlParameter("@donGia", chiTiet.DonGia));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool add(ChiTietPhieuXuat chiTiet)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+
+            SqlCommand cmd = new SqlCommand("ChiTietPhieuXuat_add", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@maPX", chiTiet.MaPhieuXuat));
+            cmd.Parameters.Add(new SqlParameter("@maHang", chiTiet.MaHang));
+            cmd.Parameters.Add(new SqlParameter("@soLuong", chiTiet.SoLuong));
+            cmd.Parameters.Add(new SqlParameter("@donGia", chiTiet.DonGia));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

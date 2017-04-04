@@ -306,7 +306,29 @@ namespace Form1
             }
             else if (PX_button1.Text.Equals("Lưu"))
             {
-                //dosmt
+                bool result = false;
+                DateTime ngayxuat = ngayXuat_datepicker.Value;
+                String lydo = lyDo_txt.Text;
+                try
+                {
+                    int maKho = Convert.ToInt32(maKho_txt.Text);
+                    int maKH = Convert.ToInt32(maKH_txt.Text);
+                    PhieuXuat phieuxuat = new PhieuXuat(ngayxuat, lydo, maKho, maKH);
+                    result = BUS.PhieuXuat_BUS.insert(phieuxuat);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Thêm thành công!");
+                    }
+                    PX_button1.Text = "Thêm";
+                    PX_button2.Text = "Sửa";
+                    PhieuXuat_initTextboxStatus(false, false);
+                    PhieuXuat_clearTextBoxValues(true, true);
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Mã kho hoặc mã khách màng không hợp lệ");
+                }
+                
             }
         }
 
@@ -331,7 +353,29 @@ namespace Form1
             }
             else if (PX_button2.Text.Equals("Lưu"))
             {
-                //dosmt
+                bool result = false;
+                int mapx = Convert.ToInt32(maPhieuXuat_txt.Text);
+                DateTime ngayxuat = ngayXuat_datepicker.Value;
+                String lydo = lyDo_txt.Text;
+                try
+                {
+                    int maKho = Convert.ToInt32(maKho_txt.Text);
+                    int maKH = Convert.ToInt32(maKH_txt.Text);
+                    PhieuXuat phieuxuat = new PhieuXuat(mapx, ngayxuat, lydo, maKho, maKH);
+                    result = BUS.PhieuXuat_BUS.edit(phieuxuat);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Sửa thành công!");
+                    }
+                    PX_button1.Text = "Thêm";
+                    PX_button2.Text = "Sửa";
+                    PhieuXuat_initTextboxStatus(false, false);
+                    PhieuXuat_clearTextBoxValues(true, true);
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Mã kho hoặc mã khách màng không hợp lệ");
+                }
             }
         }
 
@@ -352,7 +396,28 @@ namespace Form1
             }
             else if (CTPX_button1.Text.Equals("Lưu"))
             {
-                //dosmt
+                Boolean result = false;
+                try
+                {
+                    int mapx = Convert.ToInt32(maPhieuXuat_txt.Text);
+                    int maHang = Convert.ToInt32(maHang_txt.Text);
+                    int soLuong = Convert.ToInt32(soLuong_txt.Text);
+                    int donGia = Convert.ToInt32(donGia_txt.Text);
+                    ChiTietPhieuXuat chiTiet = new ChiTietPhieuXuat(mapx, maHang, soLuong, donGia);
+                    result = BUS.ChiTietPhieuXuat_BUS.add(chiTiet);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Thêm thành công!");
+                    }
+                    CTPX_button1.Text = "Thêm";
+                    CTPX_button2.Text = "Sửa";
+                    PhieuXuat_initTextboxStatus(false, false);
+                    PhieuXuat_clearTextBoxValues(false, true);
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Số liệu không hợp lệ");
+                }
             }
         }
 
@@ -377,7 +442,35 @@ namespace Form1
             }
             else if (CTPX_button2.Text.Equals("Lưu"))
             {
-                //dosmt
+                Boolean result = false;
+                try
+                {
+                    int mapx = Convert.ToInt32(maPhieuXuat_txt.Text);
+                    if (maHang_txt.Text != "")
+                    {
+                        int maHang = Convert.ToInt32(maHang_txt.Text);
+                        int soLuong = Convert.ToInt32(soLuong_txt.Text);
+                        int donGia = Convert.ToInt32(donGia_txt.Text);
+                        ChiTietPhieuXuat chiTiet = new ChiTietPhieuXuat(mapx, maHang, soLuong, donGia);
+                        result = BUS.ChiTietPhieuXuat_BUS.edit(chiTiet);
+                        if (result)
+                        {
+                            System.Windows.Forms.MessageBox.Show("Sửa thành công!");
+                        }
+                        CTPX_button1.Text = "Thêm";
+                        CTPX_button2.Text = "Sửa";
+                        PhieuXuat_initTextboxStatus(false, false);
+                        PhieuXuat_clearTextBoxValues(false, true);
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Xin chọn 1 bản ghi hợp lệ");
+                    }
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Số liệu không hợp lệ");
+                }
             }
         }
     }
