@@ -216,22 +216,6 @@
             this.LY_DO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.dgvChiTietVatTu = new System.Windows.Forms.DataGridView();
-            this.MA_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_PN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_PX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LUONG_NHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LUONG_XUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TON_DK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.dgvThongke = new System.Windows.Forms.DataGridView();
-            this.MaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TonDk = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbMaHang = new System.Windows.Forms.ComboBox();
             this.cmbMa_PN = new System.Windows.Forms.ComboBox();
             this.cmbMa_PX = new System.Windows.Forms.ComboBox();
@@ -254,6 +238,16 @@
             this.errorKH = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorHH = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorLH = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.dgvChiTietVatTu = new System.Windows.Forms.DataGridView();
+            this.TON_DK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LUONG_XUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LUONG_NHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_PX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_PN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -280,16 +274,14 @@
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bangPhieuXuat)).BeginInit();
             this.tabPage8.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).BeginInit();
-            this.tabPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLH)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).BeginInit();
+            this.tabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -2111,163 +2103,6 @@
             this.tabPage8.UseVisualStyleBackColor = true;
             this.tabPage8.Click += new System.EventHandler(this.tabPage8_Click);
             // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Controls.Add(this.tabPage10);
-            this.tabControl2.Location = new System.Drawing.Point(334, 6);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(703, 542);
-            this.tabControl2.TabIndex = 46;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.dgvChiTietVatTu);
-            this.tabPage9.Location = new System.Drawing.Point(4, 24);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(695, 514);
-            this.tabPage9.TabIndex = 0;
-            this.tabPage9.Text = "Chi tiết";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // dgvChiTietVatTu
-            // 
-            this.dgvChiTietVatTu.AllowUserToAddRows = false;
-            this.dgvChiTietVatTu.AllowUserToDeleteRows = false;
-            this.dgvChiTietVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTietVatTu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MA_HANG,
-            this.MA_PN,
-            this.MA_PX,
-            this.NGAY,
-            this.LUONG_NHAP,
-            this.LUONG_XUAT,
-            this.TON_DK});
-            this.dgvChiTietVatTu.Location = new System.Drawing.Point(5, 6);
-            this.dgvChiTietVatTu.Name = "dgvChiTietVatTu";
-            this.dgvChiTietVatTu.ReadOnly = true;
-            this.dgvChiTietVatTu.Size = new System.Drawing.Size(684, 505);
-            this.dgvChiTietVatTu.TabIndex = 5;
-            this.dgvChiTietVatTu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietVatTu_CellClick);
-            this.dgvChiTietVatTu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietVatTu_CellContentClick);
-            // 
-            // MA_HANG
-            // 
-            this.MA_HANG.DataPropertyName = "MA_HANG";
-            this.MA_HANG.HeaderText = "Mã hàng";
-            this.MA_HANG.Name = "MA_HANG";
-            this.MA_HANG.ReadOnly = true;
-            this.MA_HANG.Width = 90;
-            // 
-            // MA_PN
-            // 
-            this.MA_PN.DataPropertyName = "MA_PN";
-            this.MA_PN.HeaderText = "Mã PN";
-            this.MA_PN.Name = "MA_PN";
-            this.MA_PN.ReadOnly = true;
-            this.MA_PN.Width = 80;
-            // 
-            // MA_PX
-            // 
-            this.MA_PX.DataPropertyName = "MA_PX";
-            this.MA_PX.HeaderText = "Mã PX";
-            this.MA_PX.Name = "MA_PX";
-            this.MA_PX.ReadOnly = true;
-            this.MA_PX.Width = 80;
-            // 
-            // NGAY
-            // 
-            this.NGAY.DataPropertyName = "NGAY";
-            this.NGAY.HeaderText = "Ngày";
-            this.NGAY.Name = "NGAY";
-            this.NGAY.ReadOnly = true;
-            this.NGAY.Width = 130;
-            // 
-            // LUONG_NHAP
-            // 
-            this.LUONG_NHAP.DataPropertyName = "LUONG_NHAP";
-            this.LUONG_NHAP.HeaderText = "Lượng nhập";
-            this.LUONG_NHAP.Name = "LUONG_NHAP";
-            this.LUONG_NHAP.ReadOnly = true;
-            this.LUONG_NHAP.Width = 90;
-            // 
-            // LUONG_XUAT
-            // 
-            this.LUONG_XUAT.DataPropertyName = "LUONG_XUAT";
-            this.LUONG_XUAT.HeaderText = "Lượng xuất";
-            this.LUONG_XUAT.Name = "LUONG_XUAT";
-            this.LUONG_XUAT.ReadOnly = true;
-            this.LUONG_XUAT.Width = 90;
-            // 
-            // TON_DK
-            // 
-            this.TON_DK.DataPropertyName = "TON_DK";
-            this.TON_DK.HeaderText = "Tồn ĐK";
-            this.TON_DK.Name = "TON_DK";
-            this.TON_DK.ReadOnly = true;
-            this.TON_DK.Width = 80;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Controls.Add(this.dgvThongke);
-            this.tabPage10.Location = new System.Drawing.Point(4, 24);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(695, 514);
-            this.tabPage10.TabIndex = 1;
-            this.tabPage10.Text = "Thống Kê";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // dgvThongke
-            // 
-            this.dgvThongke.AllowUserToAddRows = false;
-            this.dgvThongke.AllowUserToDeleteRows = false;
-            this.dgvThongke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHang,
-            this.TongNhap,
-            this.TongXuat,
-            this.TonDk});
-            this.dgvThongke.Location = new System.Drawing.Point(3, 0);
-            this.dgvThongke.Name = "dgvThongke";
-            this.dgvThongke.ReadOnly = true;
-            this.dgvThongke.Size = new System.Drawing.Size(689, 511);
-            this.dgvThongke.TabIndex = 6;
-            // 
-            // MaHang
-            // 
-            this.MaHang.DataPropertyName = "MA_HANG";
-            this.MaHang.HeaderText = "Mã Hàng";
-            this.MaHang.Name = "MaHang";
-            this.MaHang.ReadOnly = true;
-            this.MaHang.Width = 170;
-            // 
-            // TongNhap
-            // 
-            this.TongNhap.DataPropertyName = "TongNhap";
-            this.TongNhap.HeaderText = "Tổng Nhập";
-            this.TongNhap.Name = "TongNhap";
-            this.TongNhap.ReadOnly = true;
-            this.TongNhap.Width = 160;
-            // 
-            // TongXuat
-            // 
-            this.TongXuat.DataPropertyName = "TongXuat";
-            this.TongXuat.HeaderText = "Tổng Xuất";
-            this.TongXuat.Name = "TongXuat";
-            this.TongXuat.ReadOnly = true;
-            this.TongXuat.Width = 160;
-            // 
-            // TonDk
-            // 
-            this.TonDk.DataPropertyName = "TON_DK";
-            this.TonDk.HeaderText = "Tồn Đầu Kỳ";
-            this.TonDk.Name = "TonDk";
-            this.TonDk.ReadOnly = true;
-            this.TonDk.Width = 160;
-            // 
             // cmbMaHang
             // 
             this.cmbMaHang.FormattingEnabled = true;
@@ -2440,6 +2275,103 @@
             // 
             this.errorLH.ContainerControl = this;
             // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.dgvChiTietVatTu);
+            this.tabPage9.Location = new System.Drawing.Point(4, 24);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(695, 514);
+            this.tabPage9.TabIndex = 0;
+            this.tabPage9.Text = "Chi tiết";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // dgvChiTietVatTu
+            // 
+            this.dgvChiTietVatTu.AllowUserToAddRows = false;
+            this.dgvChiTietVatTu.AllowUserToDeleteRows = false;
+            this.dgvChiTietVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietVatTu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MA_HANG,
+            this.MA_PN,
+            this.MA_PX,
+            this.NGAY,
+            this.LUONG_NHAP,
+            this.LUONG_XUAT,
+            this.TON_DK});
+            this.dgvChiTietVatTu.Location = new System.Drawing.Point(5, 6);
+            this.dgvChiTietVatTu.Name = "dgvChiTietVatTu";
+            this.dgvChiTietVatTu.ReadOnly = true;
+            this.dgvChiTietVatTu.Size = new System.Drawing.Size(684, 505);
+            this.dgvChiTietVatTu.TabIndex = 5;
+            this.dgvChiTietVatTu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietVatTu_CellClick);
+            this.dgvChiTietVatTu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietVatTu_CellContentClick);
+            // 
+            // TON_DK
+            // 
+            this.TON_DK.DataPropertyName = "TON_DK";
+            this.TON_DK.HeaderText = "Tồn ĐK";
+            this.TON_DK.Name = "TON_DK";
+            this.TON_DK.ReadOnly = true;
+            this.TON_DK.Width = 80;
+            // 
+            // LUONG_XUAT
+            // 
+            this.LUONG_XUAT.DataPropertyName = "LUONG_XUAT";
+            this.LUONG_XUAT.HeaderText = "Lượng xuất";
+            this.LUONG_XUAT.Name = "LUONG_XUAT";
+            this.LUONG_XUAT.ReadOnly = true;
+            this.LUONG_XUAT.Width = 90;
+            // 
+            // LUONG_NHAP
+            // 
+            this.LUONG_NHAP.DataPropertyName = "LUONG_NHAP";
+            this.LUONG_NHAP.HeaderText = "Lượng nhập";
+            this.LUONG_NHAP.Name = "LUONG_NHAP";
+            this.LUONG_NHAP.ReadOnly = true;
+            this.LUONG_NHAP.Width = 90;
+            // 
+            // NGAY
+            // 
+            this.NGAY.DataPropertyName = "NGAY";
+            this.NGAY.HeaderText = "Ngày";
+            this.NGAY.Name = "NGAY";
+            this.NGAY.ReadOnly = true;
+            this.NGAY.Width = 130;
+            // 
+            // MA_PX
+            // 
+            this.MA_PX.DataPropertyName = "MA_PX";
+            this.MA_PX.HeaderText = "Mã PX";
+            this.MA_PX.Name = "MA_PX";
+            this.MA_PX.ReadOnly = true;
+            this.MA_PX.Width = 80;
+            // 
+            // MA_PN
+            // 
+            this.MA_PN.DataPropertyName = "MA_PN";
+            this.MA_PN.HeaderText = "Mã PN";
+            this.MA_PN.Name = "MA_PN";
+            this.MA_PN.ReadOnly = true;
+            this.MA_PN.Width = 80;
+            // 
+            // MA_HANG
+            // 
+            this.MA_HANG.DataPropertyName = "MA_HANG";
+            this.MA_HANG.HeaderText = "Mã hàng";
+            this.MA_HANG.Name = "MA_HANG";
+            this.MA_HANG.ReadOnly = true;
+            this.MA_HANG.Width = 90;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Location = new System.Drawing.Point(334, 6);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(703, 542);
+            this.tabControl2.TabIndex = 46;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2488,16 +2420,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.bangPhieuXuat)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).EndInit();
-            this.tabPage10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLH)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).EndInit();
+            this.tabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2669,22 +2599,6 @@
         private System.Windows.Forms.ComboBox cmbMaHang;
         private System.Windows.Forms.ErrorProvider errorHH;
         private System.Windows.Forms.ErrorProvider errorLH;
-        private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.DataGridView dgvChiTietVatTu;
-        private System.Windows.Forms.TabPage tabPage10;
-        private System.Windows.Forms.DataGridView dgvThongke;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_HANG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LUONG_NHAP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LUONG_XUAT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TON_DK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongXuat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TonDk;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_LH;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAI_HANG;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_HANG_HOA;
@@ -2729,6 +2643,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKHO;
         private System.Windows.Forms.DataGridViewTextBoxColumn LY_DO;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TON_DK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LUONG_XUAT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LUONG_NHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_HANG;
+        private System.Windows.Forms.DataGridView dgvChiTietVatTu;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TabControl tabControl2;
     }
 }
 
