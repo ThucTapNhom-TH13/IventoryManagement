@@ -2029,7 +2029,7 @@ namespace Form1
         {
 
         }
-
+        // hien thi chi tiet vat tu len data gripview
         private void dgvChiTietVatTu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             cmbMaHang.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["MA_HANG"].Value);
