@@ -1369,6 +1369,7 @@
             this.CTPX_button3.TabIndex = 28;
             this.CTPX_button3.Text = "Xóa";
             this.CTPX_button3.UseVisualStyleBackColor = true;
+            this.CTPX_button3.Click += new System.EventHandler(this.CTPX_button3_Click);
             // 
             // CTPX_button2
             // 
@@ -1481,6 +1482,7 @@
             this.PX_button3.TabIndex = 29;
             this.PX_button3.Text = "Xóa";
             this.PX_button3.UseVisualStyleBackColor = true;
+            this.PX_button3.Click += new System.EventHandler(this.PX_button3_Click);
             // 
             // PX_button2
             // 

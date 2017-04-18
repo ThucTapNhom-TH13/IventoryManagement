@@ -25,10 +25,29 @@ namespace DALL
             return dv;
         }
 
+        public static bool delete(int mapx)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+            connection.Open();
+
+            SqlCommand cmd = new SqlCommand("PhieuXuat_delete", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@maPX", mapx));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static bool edit(PhieuXuat phieuxuat)
         {
             SqlConnection connection = SqlConnect.Connect();
-
+            connection.Open();
             SqlCommand cmd = new SqlCommand("PhieuXuat_edit", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@maPX", phieuxuat.MaPhieuXuat));
@@ -50,7 +69,7 @@ namespace DALL
         public static bool insert(PhieuXuat phieuxuat)
         {
             SqlConnection connection = SqlConnect.Connect();
-
+            connection.Open();
             SqlCommand cmd = new SqlCommand("PhieuXuat_insert", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@ngayXuat", new SqlDateTime(phieuxuat.NgayXuat)));

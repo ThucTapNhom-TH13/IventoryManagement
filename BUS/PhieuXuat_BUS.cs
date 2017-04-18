@@ -25,5 +25,10 @@ namespace BUS
         {
             return PhieuXuat_DAO.edit(phieuxuat);
         }
+
+        public static bool delete(int mapx)
+        {
+            return PhieuXuat_DAO.delete(mapx);
+        }
     }
 }

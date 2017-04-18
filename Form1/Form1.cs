@@ -473,5 +473,39 @@ namespace Form1
                 }
             }
         }
+
+        private void PX_button3_Click(object sender, EventArgs e)
+        {
+            if (maPhieuXuat_txt.Text != "")
+            {
+                int mapx = Convert.ToInt32(maPhieuXuat_txt.Text);
+                bool result = PhieuXuat_BUS.delete(mapx);
+                if (result)
+                {
+                    System.Windows.Forms.MessageBox.Show("Xóa thành công");
+                }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Xin chọn 1 bản ghi hợp lệ");
+            }
+        }
+
+        private void CTPX_button3_Click(object sender, EventArgs e)
+        {
+            if (maHang_txt.Text != "")
+            {
+                int mahang = Convert.ToInt32(maHang_txt.Text);
+                bool result = ChiTietPhieuXuat_BUS.delete(mahang);
+                if (result)
+                {
+                    System.Windows.Forms.MessageBox.Show("Xóa thành công");
+                }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Xin chọn 1 bản ghi hợp lệ");
+            }
+        }
     }
 }

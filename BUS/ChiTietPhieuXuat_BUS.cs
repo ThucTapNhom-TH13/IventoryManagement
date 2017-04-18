@@ -25,5 +25,10 @@ namespace BUS
         {
             return DALL.ChiTietPhieuXuat_DAO.edit(chiTiet);
         }
+
+        public static bool delete(int mahang)
+        {
+            return DALL.ChiTietPhieuXuat_DAO.delete(mahang);
+        }
     }
 }
