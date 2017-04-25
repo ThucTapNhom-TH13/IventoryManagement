@@ -29,13 +29,15 @@ namespace DALL
             SqlCommand cmd = new SqlCommand("THEM_CTVT", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@MA_HANG", SqlDbType.Int);
-            cmd.Parameters.Add("@MA_PHIEU", SqlDbType.NVarChar, 50);
+            cmd.Parameters.Add("@MA_PN", SqlDbType.Int);
+            cmd.Parameters.Add("@MA_PX", SqlDbType.Int);
             cmd.Parameters.Add("@NGAY", SqlDbType.DateTime);
             cmd.Parameters.Add("@LUONG_NHAP", SqlDbType.Int);
             cmd.Parameters.Add("@LUONG_XUAT", SqlDbType.Int);
             cmd.Parameters.Add("@TON_DK", SqlDbType.Int);
             cmd.Parameters["@MA_HANG"].Value = ctvt.Mahang1;
-            cmd.Parameters["@MA_PHIEU"].Value = ctvt.Maphieu1;
+            cmd.Parameters["@MA_PX"].Value = ctvt.Mapx1;
+            cmd.Parameters["@MA_PN"].Value = ctvt.Mapn1;
             cmd.Parameters["@NGAY"].Value = ctvt.Ngay1;
             cmd.Parameters["@LUONG_NHAP"].Value = ctvt.Luongnhap1;
             cmd.Parameters["@LUONG_XUAT"].Value = ctvt.Luongxuat1;
@@ -52,13 +54,15 @@ namespace DALL
             SqlCommand cmd = new SqlCommand("SUA_CTVT", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@MA_HANG", SqlDbType.Int);
-            cmd.Parameters.Add("@MA_PHIEU", SqlDbType.NVarChar, 50);
+            cmd.Parameters.Add("@MA_PN", SqlDbType.Int);
+            cmd.Parameters.Add("@MA_PX", SqlDbType.Int);
             cmd.Parameters.Add("@NGAY", SqlDbType.DateTime);
             cmd.Parameters.Add("@LUONG_NHAP", SqlDbType.Int);
             cmd.Parameters.Add("@LUONG_XUAT", SqlDbType.Int);
             cmd.Parameters.Add("@TON_DK", SqlDbType.Int);
             cmd.Parameters["@MA_HANG"].Value = ctvt.Mahang1;
-            cmd.Parameters["@MA_PHIEU"].Value = ctvt.Maphieu1;
+            cmd.Parameters["@MA_PX"].Value = ctvt.Mapx1;
+            cmd.Parameters["@MA_PN"].Value = ctvt.Mapn1;
             cmd.Parameters["@NGAY"].Value = ctvt.Ngay1;
             cmd.Parameters["@LUONG_NHAP"].Value = ctvt.Luongnhap1;
             cmd.Parameters["@LUONG_XUAT"].Value = ctvt.Luongxuat1;
@@ -68,15 +72,18 @@ namespace DALL
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public static void XoaCTVT(int mahang, string maphieu)
+        public static void XoaCTVT(int mahang, int mapx, int mapn)
         {
             SqlConnection conn = SqlConnect.Connect();
             SqlCommand cmd = new SqlCommand("XOA_CTVT", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@MA_HANG", SqlDbType.Int);
             cmd.Parameters["@MA_HANG"].Value = mahang;
-            cmd.Parameters.Add("@MA_PHIEU", SqlDbType.VarChar,50);
-            cmd.Parameters["@MA_PHIEU"].Value = maphieu;
+            cmd.Parameters.Add("@MA_PX", SqlDbType.Int);
+            cmd.Parameters["@MA_HANG"].Value =  mapx;
+            cmd.Parameters.Add("@MA_PN", SqlDbType.Int);
+            cmd.Parameters["@MA_HANG"].Value = mapn;
+
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();

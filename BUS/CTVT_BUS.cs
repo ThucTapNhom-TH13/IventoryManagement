@@ -22,9 +22,9 @@ namespace BUS
         {
             ChiTietVatTu_DALL.SuaCTVT(ctvt);
         }
-        public static void deleteCTVT(int mahang, string maphieu)
+        public static void deleteCTVT(int mahang,int mapx, int mapn)
         {
-            ChiTietVatTu_DALL.XoaCTVT(mahang, maphieu);
+            ChiTietVatTu_DALL.XoaCTVT(mahang, mapx, mapn);
         }
     }
 }

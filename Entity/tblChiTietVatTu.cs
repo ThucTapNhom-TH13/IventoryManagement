@@ -9,7 +9,8 @@ namespace Entity
     public class tblChiTietVatTu
     {
         private int Mahang;
-        private string Maphieu;
+        private int Mapx;
+        private int Mapn;
         private DateTime Ngay;
         private int Luongnhap;
         private int Luongxuat;
@@ -28,18 +29,6 @@ namespace Entity
             }
         }
 
-        public string Maphieu1
-        {
-            get
-            {
-                return Maphieu;
-            }
-
-            set
-            {
-                Maphieu = value;
-            }
-        }
 
         public DateTime Ngay1
         {
@@ -92,10 +81,38 @@ namespace Entity
                 Tondauky = value;
             }
         }
-        public tblChiTietVatTu(int mahang, string maphieu, DateTime ngay, int luongnhap, int luongxuat, int tondk)
+
+        public int Mapx1
+        {
+            get
+            {
+                return Mapx;
+            }
+
+            set
+            {
+                Mapx = value;
+            }
+        }
+
+        public int Mapn1
+        {
+            get
+            {
+                return Mapn;
+            }
+
+            set
+            {
+                Mapn = value;
+            }
+        }
+
+        public tblChiTietVatTu(int mahang, int mapn, int mapx, DateTime ngay, int luongnhap, int luongxuat, int tondk)
         {
             this.Mahang = mahang;
-            this.Maphieu = maphieu;
+            this.Mapn = mapn;
+            this.Mapx = mapx;
             this.Ngay = ngay;
             this.Luongnhap = luongnhap;
             this.Luongxuat = luongxuat;

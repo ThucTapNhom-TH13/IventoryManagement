@@ -184,9 +184,18 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.txtLuongNhap_CTVT = new System.Windows.Forms.TextBox();
-            this.txtMaPhieu_CTVT = new System.Windows.Forms.TextBox();
-            this.txtMaHnag_CTVT = new System.Windows.Forms.TextBox();
+            this.txtMaPN_CTVT = new System.Windows.Forms.TextBox();
+            this.txtMaHang_CTVT = new System.Windows.Forms.TextBox();
             this.dgvChiTietVatTu = new System.Windows.Forms.DataGridView();
+            this.txtMaPX_CTVT = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.MA_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_PN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_PX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LUONG_NHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LUONG_XUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TON_DK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -1600,6 +1609,8 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.label40);
+            this.tabPage8.Controls.Add(this.txtMaPX_CTVT);
             this.tabPage8.Controls.Add(this.btnXoa_CTVT);
             this.tabPage8.Controls.Add(this.btnSua_CTVT);
             this.tabPage8.Controls.Add(this.btnThem_CTVT);
@@ -1613,8 +1624,8 @@
             this.tabPage8.Controls.Add(this.label47);
             this.tabPage8.Controls.Add(this.label48);
             this.tabPage8.Controls.Add(this.txtLuongNhap_CTVT);
-            this.tabPage8.Controls.Add(this.txtMaPhieu_CTVT);
-            this.tabPage8.Controls.Add(this.txtMaHnag_CTVT);
+            this.tabPage8.Controls.Add(this.txtMaPN_CTVT);
+            this.tabPage8.Controls.Add(this.txtMaHang_CTVT);
             this.tabPage8.Controls.Add(this.dgvChiTietVatTu);
             this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
@@ -1658,7 +1669,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(21, 327);
+            this.label50.Location = new System.Drawing.Point(21, 365);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(78, 16);
             this.label50.TabIndex = 36;
@@ -1666,7 +1677,7 @@
             // 
             // txtTonDK_CTVT
             // 
-            this.txtTonDK_CTVT.Location = new System.Drawing.Point(127, 324);
+            this.txtTonDK_CTVT.Location = new System.Drawing.Point(127, 362);
             this.txtTonDK_CTVT.Name = "txtTonDK_CTVT";
             this.txtTonDK_CTVT.Size = new System.Drawing.Size(171, 21);
             this.txtTonDK_CTVT.TabIndex = 35;
@@ -1675,7 +1686,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(21, 266);
+            this.label49.Location = new System.Drawing.Point(21, 304);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(75, 16);
             this.label49.TabIndex = 34;
@@ -1683,7 +1694,7 @@
             // 
             // txtLuongXuat_CTVT
             // 
-            this.txtLuongXuat_CTVT.Location = new System.Drawing.Point(127, 263);
+            this.txtLuongXuat_CTVT.Location = new System.Drawing.Point(127, 301);
             this.txtLuongXuat_CTVT.Name = "txtLuongXuat_CTVT";
             this.txtLuongXuat_CTVT.Size = new System.Drawing.Size(171, 21);
             this.txtLuongXuat_CTVT.TabIndex = 33;
@@ -1721,15 +1732,15 @@
             this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(21, 150);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(66, 16);
+            this.label47.Size = new System.Drawing.Size(99, 16);
             this.label47.TabIndex = 29;
-            this.label47.Text = "Mã phiếu:";
+            this.label47.Text = "Mã phiếu nhập:";
             // 
             // label48
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(21, 209);
+            this.label48.Location = new System.Drawing.Point(21, 247);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(81, 16);
             this.label48.TabIndex = 28;
@@ -1737,32 +1748,109 @@
             // 
             // txtLuongNhap_CTVT
             // 
-            this.txtLuongNhap_CTVT.Location = new System.Drawing.Point(127, 206);
+            this.txtLuongNhap_CTVT.Location = new System.Drawing.Point(127, 244);
             this.txtLuongNhap_CTVT.Name = "txtLuongNhap_CTVT";
             this.txtLuongNhap_CTVT.Size = new System.Drawing.Size(171, 21);
             this.txtLuongNhap_CTVT.TabIndex = 27;
             // 
-            // txtMaPhieu_CTVT
+            // txtMaPN_CTVT
             // 
-            this.txtMaPhieu_CTVT.Location = new System.Drawing.Point(127, 147);
-            this.txtMaPhieu_CTVT.Name = "txtMaPhieu_CTVT";
-            this.txtMaPhieu_CTVT.Size = new System.Drawing.Size(171, 21);
-            this.txtMaPhieu_CTVT.TabIndex = 26;
+            this.txtMaPN_CTVT.Location = new System.Drawing.Point(127, 147);
+            this.txtMaPN_CTVT.Name = "txtMaPN_CTVT";
+            this.txtMaPN_CTVT.Size = new System.Drawing.Size(171, 21);
+            this.txtMaPN_CTVT.TabIndex = 26;
             // 
-            // txtMaHnag_CTVT
+            // txtMaHang_CTVT
             // 
-            this.txtMaHnag_CTVT.Location = new System.Drawing.Point(127, 36);
-            this.txtMaHnag_CTVT.Name = "txtMaHnag_CTVT";
-            this.txtMaHnag_CTVT.Size = new System.Drawing.Size(171, 21);
-            this.txtMaHnag_CTVT.TabIndex = 25;
+            this.txtMaHang_CTVT.Location = new System.Drawing.Point(127, 36);
+            this.txtMaHang_CTVT.Name = "txtMaHang_CTVT";
+            this.txtMaHang_CTVT.Size = new System.Drawing.Size(171, 21);
+            this.txtMaHang_CTVT.TabIndex = 25;
             // 
             // dgvChiTietVatTu
             // 
+            this.dgvChiTietVatTu.AllowUserToAddRows = false;
+            this.dgvChiTietVatTu.AllowUserToDeleteRows = false;
             this.dgvChiTietVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiTietVatTu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MA_HANG,
+            this.MA_PN,
+            this.MA_PX,
+            this.NGAY,
+            this.LUONG_NHAP,
+            this.LUONG_XUAT,
+            this.TON_DK});
             this.dgvChiTietVatTu.Location = new System.Drawing.Point(331, 18);
             this.dgvChiTietVatTu.Name = "dgvChiTietVatTu";
+            this.dgvChiTietVatTu.ReadOnly = true;
             this.dgvChiTietVatTu.Size = new System.Drawing.Size(696, 504);
             this.dgvChiTietVatTu.TabIndex = 3;
+            // 
+            // txtMaPX_CTVT
+            // 
+            this.txtMaPX_CTVT.Location = new System.Drawing.Point(127, 195);
+            this.txtMaPX_CTVT.Name = "txtMaPX_CTVT";
+            this.txtMaPX_CTVT.Size = new System.Drawing.Size(171, 21);
+            this.txtMaPX_CTVT.TabIndex = 40;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(21, 198);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(93, 16);
+            this.label40.TabIndex = 41;
+            this.label40.Text = "Mã phiếu xuất:";
+            // 
+            // MA_HANG
+            // 
+            this.MA_HANG.DataPropertyName = "MA_HANG";
+            this.MA_HANG.HeaderText = "Mã hàng";
+            this.MA_HANG.Name = "MA_HANG";
+            this.MA_HANG.ReadOnly = true;
+            // 
+            // MA_PN
+            // 
+            this.MA_PN.DataPropertyName = "MA_PN";
+            this.MA_PN.HeaderText = "Mã PN";
+            this.MA_PN.Name = "MA_PN";
+            this.MA_PN.ReadOnly = true;
+            // 
+            // MA_PX
+            // 
+            this.MA_PX.DataPropertyName = "MA_PX";
+            this.MA_PX.HeaderText = "Mã PX";
+            this.MA_PX.Name = "MA_PX";
+            this.MA_PX.ReadOnly = true;
+            // 
+            // NGAY
+            // 
+            this.NGAY.DataPropertyName = "NGAY";
+            this.NGAY.HeaderText = "Ngày";
+            this.NGAY.Name = "NGAY";
+            this.NGAY.ReadOnly = true;
+            // 
+            // LUONG_NHAP
+            // 
+            this.LUONG_NHAP.DataPropertyName = "LUONG_NHAP";
+            this.LUONG_NHAP.HeaderText = "Lượng nhập";
+            this.LUONG_NHAP.Name = "LUONG_NHAP";
+            this.LUONG_NHAP.ReadOnly = true;
+            // 
+            // LUONG_XUAT
+            // 
+            this.LUONG_XUAT.DataPropertyName = "LUONG_XUAT";
+            this.LUONG_XUAT.HeaderText = "Lượng xuất";
+            this.LUONG_XUAT.Name = "LUONG_XUAT";
+            this.LUONG_XUAT.ReadOnly = true;
+            // 
+            // TON_DK
+            // 
+            this.TON_DK.DataPropertyName = "TON_DK";
+            this.TON_DK.HeaderText = "Tồn ĐK";
+            this.TON_DK.Name = "TON_DK";
+            this.TON_DK.ReadOnly = true;
             // 
             // Form1
             // 
@@ -1941,8 +2029,8 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox txtLuongNhap_CTVT;
-        private System.Windows.Forms.TextBox txtMaPhieu_CTVT;
-        private System.Windows.Forms.TextBox txtMaHnag_CTVT;
+        private System.Windows.Forms.TextBox txtMaPN_CTVT;
+        private System.Windows.Forms.TextBox txtMaHang_CTVT;
         private System.Windows.Forms.DataGridView dgvChiTietVatTu;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Button button3;
@@ -1978,6 +2066,15 @@
         private System.Windows.Forms.Button btnXoa_CTVT;
         private System.Windows.Forms.Button btnSua_CTVT;
         private System.Windows.Forms.Button btnThem_CTVT;
+        private System.Windows.Forms.TextBox txtMaPX_CTVT;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_HANG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_PX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LUONG_NHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LUONG_XUAT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TON_DK;
     }
 }
 
