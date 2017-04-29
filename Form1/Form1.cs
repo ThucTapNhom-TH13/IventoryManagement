@@ -19,7 +19,7 @@ namespace Form1
         {
             InitializeComponent();
         }
-        public string strConnection = @"Data Source=DESKTOP-6ABMGHP\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True";
+        public string strConnection = @"Data Source=LINH\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True";
         public SqlConnection conn = null;
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -2044,6 +2044,11 @@ namespace Form1
         private void dgvChiTietVatTu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            webBrowser1.Navigate("https://docs.google.com/document/d/1pt3-7Uc_u_QJGcw22lq40WyvRNMyWXrk62UFG5vQqms/edit");
         }
     }
 

@@ -12,8 +12,8 @@ namespace DALL
         public static SqlConnection Connect()
         {
             // SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-MTOCE95;Initial Catalog=InventoryManagerment;Persist Security Info=True;User ID=sa;Password=linh1996");
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-6ABMGHP\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True");
-             // SqlConnection conn =new SqlConnection(@"Data Source=LINH\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-6ABMGHP\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True");
+             SqlConnection conn =new SqlConnection(@"Data Source=LINH\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True");
         
             return conn;
         }

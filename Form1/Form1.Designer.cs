@@ -191,6 +191,10 @@
             this.soLuong_txt = new System.Windows.Forms.TextBox();
             this.maHang_txt = new System.Windows.Forms.TextBox();
             this.bangChiTietPhieuNhap = new System.Windows.Forms.DataGridView();
+            this.CT_MA_PX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL_YEU_CAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DON_GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CT_MA_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.PX_button3 = new System.Windows.Forms.Button();
             this.PX_button2 = new System.Windows.Forms.Button();
@@ -244,10 +248,8 @@
             this.errorKH = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorHH = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorLH = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CT_MA_PX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SL_YEU_CAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DON_GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CT_MA_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -282,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLH)).BeginInit();
+            this.tabPage10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -294,11 +297,13 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1051, 606);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
             // 
             // tabPage1
             // 
@@ -1867,6 +1872,38 @@
             this.bangChiTietPhieuNhap.TabIndex = 2;
             this.bangChiTietPhieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bangChiTietPhieuNhap_CellClick);
             // 
+            // CT_MA_PX
+            // 
+            this.CT_MA_PX.DataPropertyName = "MA_PX";
+            this.CT_MA_PX.HeaderText = "Mã Phiếu Xuất";
+            this.CT_MA_PX.Name = "CT_MA_PX";
+            this.CT_MA_PX.ReadOnly = true;
+            this.CT_MA_PX.Width = 150;
+            // 
+            // SL_YEU_CAU
+            // 
+            this.SL_YEU_CAU.DataPropertyName = "SL_YEU_CAU";
+            this.SL_YEU_CAU.HeaderText = "Số Lượng Yêu Cầu";
+            this.SL_YEU_CAU.Name = "SL_YEU_CAU";
+            this.SL_YEU_CAU.ReadOnly = true;
+            this.SL_YEU_CAU.Width = 150;
+            // 
+            // DON_GIA
+            // 
+            this.DON_GIA.DataPropertyName = "DON_GIA";
+            this.DON_GIA.HeaderText = "Đơn Gía";
+            this.DON_GIA.Name = "DON_GIA";
+            this.DON_GIA.ReadOnly = true;
+            this.DON_GIA.Width = 200;
+            // 
+            // CT_MA_HANG
+            // 
+            this.CT_MA_HANG.DataPropertyName = "MA_HANG";
+            this.CT_MA_HANG.HeaderText = "Mã Hàng";
+            this.CT_MA_HANG.Name = "CT_MA_HANG";
+            this.CT_MA_HANG.ReadOnly = true;
+            this.CT_MA_HANG.Width = 150;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.PX_button3);
@@ -2359,37 +2396,24 @@
             // 
             this.errorLH.ContainerControl = this;
             // 
-            // CT_MA_PX
+            // tabPage10
             // 
-            this.CT_MA_PX.DataPropertyName = "MA_PX";
-            this.CT_MA_PX.HeaderText = "Mã Phiếu Xuất";
-            this.CT_MA_PX.Name = "CT_MA_PX";
-            this.CT_MA_PX.ReadOnly = true;
-            this.CT_MA_PX.Width = 150;
+            this.tabPage10.Controls.Add(this.webBrowser1);
+            this.tabPage10.Location = new System.Drawing.Point(4, 24);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(1043, 578);
+            this.tabPage10.TabIndex = 8;
+            this.tabPage10.Text = "Hướng dẫn";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // SL_YEU_CAU
+            // webBrowser1
             // 
-            this.SL_YEU_CAU.DataPropertyName = "SL_YEU_CAU";
-            this.SL_YEU_CAU.HeaderText = "Số Lượng Yêu Cầu";
-            this.SL_YEU_CAU.Name = "SL_YEU_CAU";
-            this.SL_YEU_CAU.ReadOnly = true;
-            this.SL_YEU_CAU.Width = 150;
-            // 
-            // DON_GIA
-            // 
-            this.DON_GIA.DataPropertyName = "DON_GIA";
-            this.DON_GIA.HeaderText = "Đơn Gía";
-            this.DON_GIA.Name = "DON_GIA";
-            this.DON_GIA.ReadOnly = true;
-            this.DON_GIA.Width = 200;
-            // 
-            // CT_MA_HANG
-            // 
-            this.CT_MA_HANG.DataPropertyName = "MA_HANG";
-            this.CT_MA_HANG.HeaderText = "Mã Hàng";
-            this.CT_MA_HANG.Name = "CT_MA_HANG";
-            this.CT_MA_HANG.ReadOnly = true;
-            this.CT_MA_HANG.Width = 150;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1043, 578);
+            this.webBrowser1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -2447,6 +2471,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLH)).EndInit();
+            this.tabPage10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2672,6 +2697,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SL_YEU_CAU;
         private System.Windows.Forms.DataGridViewTextBoxColumn DON_GIA;
         private System.Windows.Forms.DataGridViewTextBoxColumn CT_MA_HANG;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 
