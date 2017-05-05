@@ -695,5 +695,24 @@ namespace Form1
                 MessageBox.Show("Chưa nhập dữ liệu");
             }
         }
+        /// <summary>
+        /// KHACH HANG
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnThem_KH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_KH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_KH_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

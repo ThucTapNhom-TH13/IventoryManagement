@@ -43,6 +43,7 @@
     <Compile Include="ChiTietPhieuXuat_BUS.cs" />
     <Compile Include="CTVT_BUS.cs" />
     <Compile Include="Hanghoa_BUS.cs" />
+    <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="PhieuXuat_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
