@@ -25,7 +25,9 @@ namespace Form1
 
             Load_BangPhieuXuat();
         }
-
+        /// <summary>
+        /// CTVT
+        /// </summary>
         public void showCTVT()
         {
             dgvChiTietVatTu.DataSource = CTVT_BUS.loadCTVT();
@@ -79,7 +81,7 @@ namespace Form1
         
         private void btnThem_CTVT_Click(object sender, EventArgs e)
         {
-            if (btnSua_CTVT.Text == "Thêm")
+            if (btnThem_CTVT.Text == "Thêm")
             {
                 unEnable();
                 clearData();
@@ -166,7 +168,6 @@ namespace Form1
                 btnThem_CTVT.Text = "Lưu Sửa";
                 btnSua_CTVT.Text = "Cannel";
                 btnXoa_CTVT.Enabled = false;
-
             }
             else
             {
@@ -514,6 +515,184 @@ namespace Form1
             else
             {
                 System.Windows.Forms.MessageBox.Show("Xin chọn 1 bản ghi hợp lệ");
+            }
+        }
+
+        /// <summary>
+        /// Hang Hoa
+        /// </summary>
+        public void showHangHoa()
+        {
+            dgvHangHoa.DataSource = Hanghoa_BUS.loadHangHoa();
+        }
+        public void clearData_hh()
+        {
+            txtMaHang.Text = "";
+            txtTenHang.Text = "";
+            txtNuocSX.Text = "";
+            txtKichThuoc.Text = "";
+            txtMaLoai.Text = "";
+            txtDonvi.Text = "";
+            txtLuongTon.Text = "";
+            txtMaKho.Text = "";
+        }
+        public void Enabal_hh()
+        {
+            txtMaHang.Enabled = false;
+            txtTenHang.Enabled = false;
+            txtNuocSX.Enabled = false;
+            txtKichThuoc.Enabled = false;
+            txtMaLoai.Enabled = false;
+            txtDonvi.Enabled = false;
+            txtLuongTon.Enabled = false;
+            txtMaKho.Enabled = false;
+        }
+        public void unEnable_hh()
+        {
+            txtMaHang.Enabled = true;
+            txtTenHang.Enabled = true;
+            txtNuocSX.Enabled = true;
+            txtKichThuoc.Enabled = true;
+            txtMaLoai.Enabled = true;
+            txtDonvi.Enabled = true;
+            txtLuongTon.Enabled = true;
+            txtMaKho.Enabled = true;
+        }
+        public void buildingHangHoa()
+        {
+            txtMaHang.DataBindings.Clear();
+            txtMaHang.DataBindings.Add("Text", dgvHangHoa.DataSource, "MA_HANG");
+            txtTenHang.DataBindings.Clear();
+            txtTenHang.DataBindings.Add("Text", dgvHangHoa.DataSource, "TEN_HANG");
+            txtNuocSX.DataBindings.Clear();
+            txtNuocSX.DataBindings.Add("Text", dgvHangHoa.DataSource, "MA_NUOC_SX");
+            txtKichThuoc.DataBindings.Clear();
+            txtKichThuoc.DataBindings.Add("Text", dgvHangHoa.DataSource, "KICH_THUOC");
+            txtMaLoai.DataBindings.Clear();
+            txtMaLoai.DataBindings.Add("Text", dgvHangHoa.DataSource, "MA_LOAI_HANG");
+            txtDonvi.DataBindings.Clear();
+            txtDonvi.DataBindings.Add("Text", dgvHangHoa.DataSource, "DON_VI_TINH");
+            txtLuongTon.DataBindings.Clear();
+            txtLuongTon.DataBindings.Add("Text", dgvHangHoa.DataSource, "LUONG_TON");
+            txtMaKho.DataBindings.Clear();
+            txtMaKho.DataBindings.Add("Text", dgvHangHoa.DataSource, "MA_KHO");
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (btnThem.Text == "Thêm")
+            {
+                unEnable();
+                clearData();
+                btnThem.Text = "Lưu Thêm";
+                btnSua.Text = "Cannel";
+                btnXoa.Enabled = false;
+            }
+            else if (btnThem.Text == "Lưu Thêm")
+            {
+                btnThem.Text = "Thêm";
+                btnSua.Text = "Sửa";
+                btnXoa.Enabled = true;
+                if (!Catch.cNullTB(txtMaHang.Text) & !Catch.cNullTB(txtTenHang.Text) & !Catch.cNullTB(txtNuocSX.Text) & !Catch.cNullTB(txtMaLoai.Text) & !Catch.cNullTB(txtMaKho.Text))
+                {
+                    try
+                    {
+                        int mahang = Convert.ToInt32(txtMaHang.Text.Trim());
+                        string tenhang = txtTenHang.Text.Trim();
+                        int manuoc = Convert.ToInt32(txtNuocSX.Text.Trim());
+                        string kichthuoc = txtKichThuoc.Text.Trim();
+                        int maloai = Convert.ToInt32(txtMaLoai.Text.Trim());
+                        string donvi = txtDonvi.Text.Trim();
+                        int luongton = Convert.ToInt32(txtLuongTon.Text.Trim());
+                        int makho = Convert.ToInt32(txtMaKho.Text.Trim());
+
+                        Hanghoa hh = new Hanghoa(mahang, tenhang, manuoc, kichthuoc, maloai, donvi, luongton, makho);
+                        Hanghoa_BUS.addHangHoa(hh);
+                        showHangHoa();
+                        buildingHangHoa();
+                        Enabal_hh();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Loi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chưa nhập dữ liệu");
+                }
+            }
+            else if (btnThem.Text == "Lưu Sửa")
+            {
+                btnThem.Text = "Thêm";
+                btnSua.Text = "Sửa";
+                btnXoa.Enabled = true;
+                if (!Catch.cNullTB(txtMaHang.Text) & !Catch.cNullTB(txtTenHang.Text) & !Catch.cNullTB(txtNuocSX.Text) & !Catch.cNullTB(txtMaLoai.Text) & !Catch.cNullTB(txtMaKho.Text))
+                {
+                    try
+                    {
+                        int mahang = Convert.ToInt32(txtMaHang.Text.Trim());
+                        string tenhang = txtTenHang.Text.Trim();
+                        int manuoc = Convert.ToInt32(txtNuocSX.Text.Trim());
+                        string kichthuoc = txtKichThuoc.Text.Trim();
+                        int maloai = Convert.ToInt32(txtMaLoai.Text.Trim());
+                        string donvi = txtDonvi.Text.Trim();
+                        int luongton = Convert.ToInt32(txtLuongTon.Text.Trim());
+                        int makho = Convert.ToInt32(txtMaKho.Text.Trim());
+
+                        Hanghoa hh = new Hanghoa(mahang, tenhang, manuoc, kichthuoc, maloai, donvi, luongton, makho);
+                        Hanghoa_BUS.updateHangHoa(hh);
+                        showHangHoa();
+                        buildingHangHoa();
+                        Enabal_hh();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Loi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chưa nhập dữ liệu");
+                }
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (btnSua.Text == "Sửa")
+            {
+                unEnable_hh();
+                txtMaHang.Enabled = false;
+                btnThem.Text = "Lưu Sửa";
+                btnSua.Text = "Cannel";
+                btnXoa.Enabled = false;
+
+            }
+            else
+            {
+                btnThem.Text = "Thêm";
+                btnSua.Text = "Sửa";
+                btnXoa.Enabled = true;
+                Enabal_hh();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (!Catch.cNullTB(txtMaHang.Text))
+            {
+                int mahang = Convert.ToInt32(txtMaHang.Text);
+              
+                Hanghoa_BUS.deleteHangHoa(mahang);
+                showHangHoa();
+                buildingHangHoa();
+                Enabal_hh();
+
+            }
+            else
+            {
+                MessageBox.Show("Chưa nhập dữ liệu");
             }
         }
     }
