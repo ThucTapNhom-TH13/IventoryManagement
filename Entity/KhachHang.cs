@@ -71,5 +71,11 @@ namespace Entity
             this.diachi = diachi;
             this.dienthoai = dt;
         }
+        public KhachHang(string tenkh, string diachi, string dt)
+        {
+            this.tenkh = tenkh;
+            this.diachi = diachi;
+            this.dienthoai = dt;
+        }
     }
 }

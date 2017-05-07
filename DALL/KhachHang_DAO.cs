@@ -14,7 +14,7 @@ namespace DALL
         public static DataTable loadKhachHang()
         {
             SqlConnection conn = SqlConnect.Connect();
-            SqlCommand command = new SqlCommand("XEM_KHACH_HANG", conn);
+            SqlCommand command = new SqlCommand("XEM_KH", conn);
             command.CommandType = CommandType.StoredProcedure;
             conn.Open();
             SqlDataAdapter da = new SqlDataAdapter();
@@ -29,12 +29,10 @@ namespace DALL
             SqlConnection conn = SqlConnect.Connect();
             SqlCommand cmd = new SqlCommand("THEM_KH", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@MA_KH", SqlDbType.Int);
             cmd.Parameters.Add("@TEN_KH", SqlDbType.NVarChar, 50);
             cmd.Parameters.Add("@DIA_CHI", SqlDbType.NVarChar, 50);
             cmd.Parameters.Add("@DIEN_THOAI", SqlDbType.NVarChar, 50);
    
-            cmd.Parameters["@MA_KH"].Value = kh.Makh;
             cmd.Parameters["@TEN_KH"].Value = kh.Tenkh;
             cmd.Parameters["@DIA_CHI"].Value = kh.Diachi;
             cmd.Parameters["@DIEN_THOAI"].Value = kh.Dienthoai;

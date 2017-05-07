@@ -29,7 +29,7 @@ namespace DALL
             SqlConnection conn = SqlConnect.Connect();
             SqlCommand cmd = new SqlCommand("THEM_HANG_HOA", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@MA_HANG", SqlDbType.Int);
+
             cmd.Parameters.Add("@TEN_HANG", SqlDbType.NVarChar,50);
             cmd.Parameters.Add("@MA_NUOC_SX", SqlDbType.Int);
             cmd.Parameters.Add("@KICH_THUOC", SqlDbType.NVarChar,50);
@@ -37,7 +37,7 @@ namespace DALL
             cmd.Parameters.Add("@DON_VI_TINH", SqlDbType.NVarChar,50);
             cmd.Parameters.Add("@LUONG_TON", SqlDbType.Int);
             cmd.Parameters.Add("@MA_KHO", SqlDbType.Int);
-            cmd.Parameters["@MA_HANG"].Value = hh.Mahang;
+
             cmd.Parameters["@TEN_HANG"].Value = hh.Tenhang;
             cmd.Parameters["@MA_NUOC_SX"].Value = hh.Manuocsx;
             cmd.Parameters["@KICH_THUOC"].Value = hh.Kichthuoc;

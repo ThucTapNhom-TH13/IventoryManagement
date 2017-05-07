@@ -120,7 +120,18 @@ namespace Entity
                 makho = value;
             }
         }
-        public Hanghoa(int mahang, string tenhang, int manuoc, string kichthuoc, int maloai, string donvi,int luongton,int makho)
+        public Hanghoa( string tenhang, int manuoc, string kichthuoc, int maloai, string donvi,int luongton,int makho)
+        {
+            
+            this.tenhang = tenhang;
+            this.manuocsx = manuoc;
+            this.kichthuoc = kichthuoc;
+            this.maloaihang = maloai;
+            this.donvitinh = donvi;
+            this.luongton = luongton;
+            this.makho = makho;
+        }
+        public Hanghoa(int mahang,string tenhang, int manuoc, string kichthuoc, int maloai, string donvi, int luongton, int makho)
         {
             this.mahang = mahang;
             this.tenhang = tenhang;
