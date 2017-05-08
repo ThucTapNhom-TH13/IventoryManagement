@@ -1,12 +1,3 @@
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\BUS.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\BUS.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\DALL.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\Entity.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\DALL.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\Entity.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.pdb
 F:\IventoryManagement\BUS\bin\Debug\BUS.dll
 F:\IventoryManagement\BUS\bin\Debug\BUS.pdb
 F:\IventoryManagement\BUS\bin\Debug\DALL.dll
@@ -16,3 +7,12 @@ F:\IventoryManagement\BUS\bin\Debug\Entity.pdb
 F:\IventoryManagement\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 F:\IventoryManagement\BUS\obj\Debug\BUS.dll
 F:\IventoryManagement\BUS\obj\Debug\BUS.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\BUS.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\BUS.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\DALL.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\Entity.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\DALL.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\Entity.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.pdb

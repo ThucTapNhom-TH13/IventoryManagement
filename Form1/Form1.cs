@@ -1001,6 +1001,63 @@ namespace Form1
                 MessageBox.Show("Chưa nhập dữ liệu");
             }
         }
+
+        public void loadBangNhaCungCap()
+        {
+            dataGridView4.DataSource = NhaCungCap_BUS.NhaCungCap_getAll();
+        }
+
+        public void loadBangNuocSanXuat()
+        {
+            dataGridView5.DataSource = NuocSX_BUS.NuocSX_getAll();
+        }
+
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int CurrentIndex = dataGridView4.CurrentCell.RowIndex;
+
+            if (dataGridView4.Rows[CurrentIndex].Cells[0].Value != null)
+            {
+                String manhacc = dataGridView4.Rows[CurrentIndex].Cells[0].Value.ToString();
+                textBox16.Text = manhacc;
+            }
+            if (dataGridView4.Rows[CurrentIndex].Cells[1].Value != null)
+            {
+                String tennhacc = dataGridView4.Rows[CurrentIndex].Cells[1].Value.ToString();
+                textBox17.Text = tennhacc;
+            }
+            if (dataGridView4.Rows[CurrentIndex].Cells[2].Value != null)
+            {
+                String diachi = dataGridView4.Rows[CurrentIndex].Cells[2].Value.ToString();
+                textBox18.Text = diachi;
+            }
+            if (dataGridView4.Rows[CurrentIndex].Cells[3].Value != null)
+            {
+                String dienthoai = dataGridView4.Rows[CurrentIndex].Cells[3].Value.ToString();
+                textBox19.Text = dienthoai;
+            }
+            if (dataGridView4.Rows[CurrentIndex].Cells[4].Value != null)
+            {
+                String manuoc = dataGridView4.Rows[CurrentIndex].Cells[4].Value.ToString();
+                textBox20.Text = manuoc;
+            }
+        }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int CurrentIndex = dataGridView5.CurrentCell.RowIndex;
+
+            if (dataGridView5.Rows[CurrentIndex].Cells[0].Value != null)
+            {
+                String manuoc = dataGridView5.Rows[CurrentIndex].Cells[0].Value.ToString();
+                textBox22.Text = manuoc;
+            }
+            if (dataGridView5.Rows[CurrentIndex].Cells[1].Value != null)
+            {
+                String tennuoc = dataGridView5.Rows[CurrentIndex].Cells[1].Value.ToString();
+                textBox21.Text = tennuoc;
+            }
+        }
     }
 
 }

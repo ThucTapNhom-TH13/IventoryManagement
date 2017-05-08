@@ -50,6 +50,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvLoaiHang = new System.Windows.Forms.DataGridView();
+            this.MA_LH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAI_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenLoaiHang = new System.Windows.Forms.TextBox();
             this.txtMaLoaiHang = new System.Windows.Forms.TextBox();
             this.txtMaKho = new System.Windows.Forms.TextBox();
@@ -122,6 +124,10 @@
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtMaKh = new System.Windows.Forms.TextBox();
             this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.MA_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIA_CHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIEN_THOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button22 = new System.Windows.Forms.Button();
@@ -204,12 +210,6 @@
             this.LUONG_NHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LUONG_XUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TON_DK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_LH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAI_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIA_CHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIEN_THOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -497,6 +497,22 @@
             this.dgvLoaiHang.ReadOnly = true;
             this.dgvLoaiHang.Size = new System.Drawing.Size(696, 126);
             this.dgvLoaiHang.TabIndex = 9;
+            // 
+            // MA_LH
+            // 
+            this.MA_LH.DataPropertyName = "MA_LOAI_HANG";
+            this.MA_LH.FillWeight = 200F;
+            this.MA_LH.HeaderText = "Mã Loại Hàng ";
+            this.MA_LH.MinimumWidth = 10;
+            this.MA_LH.Name = "MA_LH";
+            this.MA_LH.ReadOnly = true;
+            // 
+            // LOAI_HANG
+            // 
+            this.LOAI_HANG.DataPropertyName = "LOAI_HANG";
+            this.LOAI_HANG.HeaderText = "Tên Loại Hàng";
+            this.LOAI_HANG.Name = "LOAI_HANG";
+            this.LOAI_HANG.ReadOnly = true;
             // 
             // txtTenLoaiHang
             // 
@@ -871,6 +887,7 @@
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(696, 135);
             this.dataGridView5.TabIndex = 5;
+            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
             // 
             // textBox22
             // 
@@ -1028,6 +1045,7 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(696, 331);
             this.dataGridView4.TabIndex = 2;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             // 
             // tabPage5
             // 
@@ -1164,6 +1182,34 @@
             this.dgvKH.ReadOnly = true;
             this.dgvKH.Size = new System.Drawing.Size(696, 493);
             this.dgvKH.TabIndex = 2;
+            // 
+            // MA_KH
+            // 
+            this.MA_KH.DataPropertyName = "MA_KH";
+            this.MA_KH.HeaderText = "Mã KH";
+            this.MA_KH.Name = "MA_KH";
+            this.MA_KH.ReadOnly = true;
+            // 
+            // TEN_KH
+            // 
+            this.TEN_KH.DataPropertyName = "TEN_KH";
+            this.TEN_KH.HeaderText = "Tên Khách Hàng";
+            this.TEN_KH.Name = "TEN_KH";
+            this.TEN_KH.ReadOnly = true;
+            // 
+            // DIA_CHI
+            // 
+            this.DIA_CHI.DataPropertyName = "DIA_CHI";
+            this.DIA_CHI.HeaderText = "Địa Chỉ";
+            this.DIA_CHI.Name = "DIA_CHI";
+            this.DIA_CHI.ReadOnly = true;
+            // 
+            // DIEN_THOAI
+            // 
+            this.DIEN_THOAI.DataPropertyName = "DIEN_THOAI";
+            this.DIEN_THOAI.HeaderText = "Điện Thoại";
+            this.DIEN_THOAI.Name = "DIEN_THOAI";
+            this.DIEN_THOAI.ReadOnly = true;
             // 
             // tabPage6
             // 
@@ -1956,50 +2002,6 @@
             this.TON_DK.HeaderText = "Tồn ĐK";
             this.TON_DK.Name = "TON_DK";
             this.TON_DK.ReadOnly = true;
-            // 
-            // MA_LH
-            // 
-            this.MA_LH.DataPropertyName = "MA_LOAI_HANG";
-            this.MA_LH.FillWeight = 200F;
-            this.MA_LH.HeaderText = "Mã Loại Hàng ";
-            this.MA_LH.MinimumWidth = 10;
-            this.MA_LH.Name = "MA_LH";
-            this.MA_LH.ReadOnly = true;
-            // 
-            // LOAI_HANG
-            // 
-            this.LOAI_HANG.DataPropertyName = "LOAI_HANG";
-            this.LOAI_HANG.HeaderText = "Tên Loại Hàng";
-            this.LOAI_HANG.Name = "LOAI_HANG";
-            this.LOAI_HANG.ReadOnly = true;
-            // 
-            // MA_KH
-            // 
-            this.MA_KH.DataPropertyName = "MA_KH";
-            this.MA_KH.HeaderText = "Mã KH";
-            this.MA_KH.Name = "MA_KH";
-            this.MA_KH.ReadOnly = true;
-            // 
-            // TEN_KH
-            // 
-            this.TEN_KH.DataPropertyName = "TEN_KH";
-            this.TEN_KH.HeaderText = "Tên Khách Hàng";
-            this.TEN_KH.Name = "TEN_KH";
-            this.TEN_KH.ReadOnly = true;
-            // 
-            // DIA_CHI
-            // 
-            this.DIA_CHI.DataPropertyName = "DIA_CHI";
-            this.DIA_CHI.HeaderText = "Địa Chỉ";
-            this.DIA_CHI.Name = "DIA_CHI";
-            this.DIA_CHI.ReadOnly = true;
-            // 
-            // DIEN_THOAI
-            // 
-            this.DIEN_THOAI.DataPropertyName = "DIEN_THOAI";
-            this.DIEN_THOAI.HeaderText = "Điện Thoại";
-            this.DIEN_THOAI.Name = "DIEN_THOAI";
-            this.DIEN_THOAI.ReadOnly = true;
             // 
             // Form1
             // 

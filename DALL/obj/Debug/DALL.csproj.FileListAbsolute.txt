@@ -1,10 +1,3 @@
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\DALL.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\DALL.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\Entity.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\Entity.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.csprojResolveAssemblyReference.cache
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.pdb
 F:\IventoryManagement\DALL\bin\Debug\DALL.dll
 F:\IventoryManagement\DALL\bin\Debug\DALL.pdb
 F:\IventoryManagement\DALL\bin\Debug\Entity.dll
@@ -12,3 +5,10 @@ F:\IventoryManagement\DALL\bin\Debug\Entity.pdb
 F:\IventoryManagement\DALL\obj\Debug\DALL.csprojResolveAssemblyReference.cache
 F:\IventoryManagement\DALL\obj\Debug\DALL.dll
 F:\IventoryManagement\DALL\obj\Debug\DALL.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\DALL.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\DALL.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\Entity.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\Entity.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.csprojResolveAssemblyReference.cache
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.pdb

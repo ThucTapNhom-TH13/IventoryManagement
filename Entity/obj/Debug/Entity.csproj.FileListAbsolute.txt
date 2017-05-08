@@ -3,13 +3,12 @@ c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManage
 c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\obj\Debug\Entity.dll
 c:\users\lehuy\onedrive\tài liệu\visual studio 2015\Projects\IventoryManagement\Entity\obj\Debug\Entity.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\bin\Debug\Entity.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\bin\Debug\Entity.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.dll
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.pdb
-C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 F:\IventoryManagement\Entity\bin\Debug\Entity.dll
 F:\IventoryManagement\Entity\bin\Debug\Entity.pdb
 F:\IventoryManagement\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 F:\IventoryManagement\Entity\obj\Debug\Entity.dll
 F:\IventoryManagement\Entity\obj\Debug\Entity.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\bin\Debug\Entity.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\bin\Debug\Entity.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.dll
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.pdb
