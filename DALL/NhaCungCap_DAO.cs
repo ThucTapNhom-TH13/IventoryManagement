@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity;
 
 namespace DALL
 {
@@ -21,6 +22,49 @@ namespace DALL
             da.Fill(dt);
             DataView dv = new DataView(dt);
             return dv;
+        }
+
+        public static bool update(NhaCungCap ncc)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("NhaCungCap_update", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@maNhaCC", ncc.maNhaCC));
+            cmd.Parameters.Add(new SqlParameter("@tenNhaCC", ncc.tenNhaCC));
+            cmd.Parameters.Add(new SqlParameter("@diachi", ncc.diachi));
+            cmd.Parameters.Add(new SqlParameter("@dienthoai", ncc.dienthoai));
+            cmd.Parameters.Add(new SqlParameter("@maNuoc", ncc.maNuoc));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool insert(NhaCungCap ncc)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("NhaCungCap_insert", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@tenNhaCC", ncc.tenNhaCC));
+            cmd.Parameters.Add(new SqlParameter("@diachi", ncc.diachi));
+            cmd.Parameters.Add(new SqlParameter("@dienthoai", ncc.dienthoai));
+            cmd.Parameters.Add(new SqlParameter("@maNuoc", ncc.maNuoc));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -22,5 +22,60 @@ namespace DALL
             DataView dv = new DataView(dt);
             return dv;
         }
+
+        public static bool delete(string manuoc)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("NuocSX_delete", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@maNuoc", Int32.Parse(manuoc)));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool edit(string manuoc, string tennuoc)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("NuocSX_edit", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@maNuoc", Int32.Parse(manuoc)));
+            cmd.Parameters.Add(new SqlParameter("@tenNuoc", tennuoc));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool insert(string tennuoc)
+        {
+            SqlConnection connection = SqlConnect.Connect();
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("NuocSX_insert", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@tenNuoc", tennuoc));
+            int msg = cmd.ExecuteNonQuery();
+            if (msg > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

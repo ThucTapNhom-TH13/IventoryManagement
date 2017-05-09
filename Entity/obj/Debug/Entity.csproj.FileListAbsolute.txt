@@ -12,3 +12,4 @@ C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\bin\Debug\Ent
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\bin\Debug\Entity.pdb
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.dll
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.pdb
+C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache

@@ -21,9 +21,11 @@ namespace Form1
         private void Form1_Load(object sender, EventArgs e)
         {
             PhieuXuat_initTextboxStatus(false, false);
-
-
             Load_BangPhieuXuat();
+            NhaCungCapTab_enableTextbox(false, false);
+            loadBangNhaCungCap();
+            loadBangNuocSanXuat();
+
             Enabal();
             showCTVT();
             buildingCTVT();
@@ -1002,6 +1004,34 @@ namespace Form1
             }
         }
 
+        public void NhaCungCapTab_enableTextbox(bool nhacc, bool nuocsx)
+        {
+            textBox16.Enabled = false;
+            textBox17.Enabled = nhacc;
+            textBox18.Enabled = nhacc;
+            textBox19.Enabled = nhacc;
+            textBox20.Enabled = nhacc;
+            textBox22.Enabled = false;
+            textBox21.Enabled = nuocsx;
+        }
+
+        public void NhaCungCapTab_clearTextbox(bool nhacc, bool nuocsx)
+        {
+            if (nhacc)
+            {
+                textBox16.Text = "";
+                textBox17.Text = "";
+                textBox18.Text = "";
+                textBox19.Text = "";
+                textBox20.Text = "";
+            }
+            if (nuocsx)
+            {
+                textBox22.Text = "";
+                textBox21.Text = "";
+            }
+        }
+
         public void loadBangNhaCungCap()
         {
             dataGridView4.DataSource = NhaCungCap_BUS.NhaCungCap_getAll();
@@ -1057,6 +1087,268 @@ namespace Form1
                 String tennuoc = dataGridView5.Rows[CurrentIndex].Cells[1].Value.ToString();
                 textBox21.Text = tennuoc;
             }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (button15.Text.Equals("Thêm"))
+            {
+                button15.Text = "Lưu";
+                button14.Text = "Hủy";
+                NhaCungCapTab_enableTextbox(false, true);
+                NhaCungCapTab_clearTextbox(false, true);
+            }
+            else if (button15.Text.Equals("Hủy"))
+            {
+                button15.Text = "Thêm";
+                button14.Text = "Sửa";
+                NhaCungCapTab_enableTextbox(false, false);
+                NhaCungCapTab_clearTextbox(false, true);
+            }
+            else if (button15.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    String tennuoc = textBox21.Text;
+                    if (tennuoc.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập tên nước");
+                        return;
+                    }
+                    bool result = NuocSX_BUS.insert(tennuoc);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Thêm thành công!");
+                    }
+                    button15.Text = "Thêm";
+                    button14.Text = "Sửa";
+                    NhaCungCapTab_enableTextbox(false, false);
+                    loadBangNuocSanXuat();
+                    NhaCungCapTab_clearTextbox(false, true);
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("không hợp lệ");
+                }
+
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (button14.Text.Equals("Sửa"))
+            {
+                String manuoc = textBox21.Text.ToString();
+                if (!"".Equals(manuoc.Trim()))
+                {
+                    button15.Text = "Hủy";
+                    button14.Text = "Lưu";
+                    NhaCungCapTab_enableTextbox(false, true);
+                }
+            }
+            else if (button14.Text.Equals("Hủy"))
+            {
+                button15.Text = "Thêm";
+                button14.Text = "Sửa";
+                NhaCungCapTab_clearTextbox(false, true);
+                NhaCungCapTab_enableTextbox(false, false);
+            }
+            else if (button14.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    if (textBox22.Text.Trim() != "")
+                    {
+                        String tennuoc = textBox21.Text;
+                        String manuoc = textBox22.Text;
+                        if (tennuoc.Trim() == "")
+                        {
+                            System.Windows.Forms.MessageBox.Show("vui lòng nhập tên nước");
+                            return;
+                        }
+                        bool result = NuocSX_BUS.edit(manuoc, tennuoc);
+                        if (result)
+                        {
+                            System.Windows.Forms.MessageBox.Show("Sửa thành công!");
+                        }
+                        button15.Text = "Thêm";
+                        button14.Text = "Sửa";
+                        PhieuXuat_initTextboxStatus(false, false);
+                        PhieuXuat_clearTextBoxValues(false, true);
+                        loadBangNuocSanXuat();
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Xin chọn 1 bản ghi hợp lệ");
+                    }
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Số liệu không hợp lệ");
+                }
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (textBox22.Text.Trim() != "")
+            {
+                String manuoc = textBox22.Text;
+                bool result = NuocSX_BUS.delete(manuoc);
+                if (result)
+                {
+                    System.Windows.Forms.MessageBox.Show("Xóa thành công!");
+                }
+                loadBangNuocSanXuat();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Xin chọn 1 bản ghi hợp lệ");
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (button12.Text.Equals("Thêm"))
+            {
+                button12.Text = "Lưu";
+                button11.Text = "Hủy";
+                NhaCungCapTab_enableTextbox(true, false);
+                NhaCungCapTab_clearTextbox(true, false);
+            }
+            else if (button12.Text.Equals("Hủy"))
+            {
+                button12.Text = "Thêm";
+                button11.Text = "Sửa";
+                NhaCungCapTab_enableTextbox(false, false);
+                NhaCungCapTab_clearTextbox(true, false);
+            }
+            else if (button12.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    String tennhacc = textBox17.Text;
+                    if (tennhacc.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập tên nhà cung cấp");
+                        return;
+                    }
+                    String diachi = textBox18.Text;
+                    if (diachi.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập địa chỉ");
+                        return;
+                    }
+                    String dienthoai = textBox19.Text;
+                    if (dienthoai.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập số điện thoại");
+                        return;
+                    }
+                    String manuoc = textBox20.Text;
+                    if (manuoc.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập mã nước");
+                        return;
+                    }
+                    NhaCungCap ncc = new NhaCungCap(tennhacc, diachi, dienthoai, Int32.Parse(manuoc));
+                    bool result = NhaCungCap_BUS.insert(ncc);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Thêm thành công!");
+                    }
+                    button12.Text = "Thêm";
+                    button11.Text = "Sửa";
+                    NhaCungCapTab_enableTextbox(false, false);
+                    loadBangNhaCungCap();
+                    NhaCungCapTab_clearTextbox(true, false);
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Mã nhà cung cấp không hợp lệ");
+                }
+
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (button11.Text.Equals("Sửa"))
+            {
+                String manuoc = textBox16.Text;
+                if (!"".Equals(manuoc.Trim()))
+                {
+                    button12.Text = "Hủy";
+                    button11.Text = "Lưu";
+                    NhaCungCapTab_enableTextbox(true, false);
+                }
+            }
+            else if (button11.Text.Equals("Hủy"))
+            {
+                button12.Text = "Thêm";
+                button11.Text = "Sửa";
+                NhaCungCapTab_clearTextbox(false, true);
+                NhaCungCapTab_enableTextbox(false, false);
+            }
+            else if (button11.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    if (textBox22.Text.Trim() != "")
+                    {
+                        String tennhacc = textBox17.Text;
+                        if (tennhacc.Trim() == "")
+                        {
+                            System.Windows.Forms.MessageBox.Show("vui lòng nhập tên nhà cung cấp");
+                            return;
+                        }
+                        String diachi = textBox18.Text;
+                        if (diachi.Trim() == "")
+                        {
+                            System.Windows.Forms.MessageBox.Show("vui lòng nhập địa chỉ");
+                            return;
+                        }
+                        String dienthoai = textBox19.Text;
+                        if (dienthoai.Trim() == "")
+                        {
+                            System.Windows.Forms.MessageBox.Show("vui lòng nhập số điện thoại");
+                            return;
+                        }
+                        String manuoc = textBox20.Text;
+                        if (manuoc.Trim() == "")
+                        {
+                            System.Windows.Forms.MessageBox.Show("vui lòng nhập mã nước");
+                            return;
+                        }
+                        String maNhacc = textBox16.Text;
+                        NhaCungCap ncc = new NhaCungCap(Int32.Parse(maNhacc), tennhacc, diachi, dienthoai, Int32.Parse(manuoc));
+                        bool result = NhaCungCap_BUS.update(ncc);
+                        if (result)
+                        {
+                            System.Windows.Forms.MessageBox.Show("Sửa thành công!");
+                        }
+
+                        button12.Text = "Thêm";
+                        button11.Text = "Sửa";
+                        NhaCungCapTab_enableTextbox(false, false);
+                        loadBangNhaCungCap();
+                        NhaCungCapTab_clearTextbox(true, false);
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Xin chọn 1 bản ghi hợp lệ");
+                    }
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Số liệu không hợp lệ");
+                }
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -37,7 +37,7 @@ end
 create proc PhieuXuat_delete (@maPX int) as
 begin
 	update Chi_Tiet_Vat_Tu 
-	set MA_PHIEU_XUAT = null where MA_PHIEU_XUAT = @maPX
+	set MA_PX = null where MA_PHIEU_XUAT = @maPX
 
 	delete from Chi_Tiet_Phieu_Xuat
 	where MA_PX = @maPX
@@ -51,4 +51,3 @@ begin
 	delete from Chi_Tiet_Phieu_Xuat
 	where MA_HANG = @mahang
 end
-drop proc ChiTietPhieuXuat_delete
