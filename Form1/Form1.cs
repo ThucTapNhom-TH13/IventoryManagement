@@ -1804,7 +1804,7 @@ namespace Form1
             {
                 String value = dataGridView7.Rows[CurrentIndex].Cells[1].Value.ToString();
                 String[] datetime = value.Split('/', ' ');
-                DateTime date = new DateTime(Int32.Parse(datetime[2]), Int32.Parse(datetime[0]), Int32.Parse(datetime[1]));
+                DateTime date = new DateTime(int.Parse(datetime[2]), int.Parse(datetime[0]), Int32.Parse(datetime[1]));
                 dateTimePicker1.Value = date;
             }
 
