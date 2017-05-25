@@ -14,7 +14,10 @@ namespace BUS
         {
             return NuocSX_DAO.getAll();
         }
-
+        public static DataSet NuocSX_getma()
+        {
+            return NuocSX_DAO.getNuocsx();
+        }
         public static bool insert(string tennuoc)
         {
             return NuocSX_DAO.insert(tennuoc);

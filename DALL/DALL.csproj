@@ -44,9 +44,11 @@
     <Compile Include="ChiTietVatTu_DALL.cs" />
     <Compile Include="Hanghoa_DAO.cs" />
     <Compile Include="KhachHang_DAO.cs" />
+    <Compile Include="KhoHang_DAL.cs" />
     <Compile Include="LoaiHang_DAO.cs" />
     <Compile Include="NhaCungCap_DAO.cs" />
     <Compile Include="NuocSX_DAO.cs" />
+    <Compile Include="PhieuNhap_DAL.cs" />
     <Compile Include="PhieuXuat_DAO.cs" />
     <Compile Include="SqlConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

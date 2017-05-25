@@ -15,6 +15,10 @@ namespace BUS
         {
             return Hanghoa_DAO.loadHanghoa();
         }
+        public static DataSet getHangHoa()
+        {
+            return Hanghoa_DAO.getHangHoa();
+        }
         public static void addHangHoa(Hanghoa hh)
         {
             Hanghoa_DAO.ThemHangHoa(hh);

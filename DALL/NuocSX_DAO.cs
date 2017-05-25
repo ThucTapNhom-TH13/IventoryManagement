@@ -22,6 +22,18 @@ namespace DALL
             DataView dv = new DataView(dt);
             return dv;
         }
+        public static DataSet getNuocsx()
+        {
+            SqlConnection conn = SqlConnect.Connect();
+            SqlCommand command = new SqlCommand("SELECT * FROM Nuoc_SX", conn);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.SelectCommand = command;
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
 
         public static bool delete(string manuoc)
         {

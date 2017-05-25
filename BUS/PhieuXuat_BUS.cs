@@ -15,7 +15,10 @@ namespace BUS
         {
             return PhieuXuat_DAO.PhieuXuat_getAll();
         }
-
+        public static DataSet getPX()
+        {
+            return PhieuXuat_DAO.getPhieuXuat();
+        }
         public static bool insert(PhieuXuat phieuxuat)
         {
             return PhieuXuat_DAO.insert(phieuxuat);

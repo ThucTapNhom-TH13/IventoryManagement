@@ -24,6 +24,18 @@ namespace DALL
             conn.Close();
             return dt;
         }
+        public static DataSet getLoaiHang()
+        {
+            SqlConnection conn = SqlConnect.Connect();
+            SqlCommand command = new SqlCommand("SELECT * FROM Loai_Hang", conn);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.SelectCommand = command;
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
         public static void ThemLoaiHang(LoaiHang Lh)
         {
             SqlConnection conn = SqlConnect.Connect();

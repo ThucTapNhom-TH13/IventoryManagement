@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label51 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbNuoc_sx = new System.Windows.Forms.ComboBox();
+            this.cmbMa_kho = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -54,11 +57,8 @@
             this.LOAI_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenLoaiHang = new System.Windows.Forms.TextBox();
             this.txtMaLoaiHang = new System.Windows.Forms.TextBox();
-            this.txtMaKho = new System.Windows.Forms.TextBox();
             this.txtLuongTon = new System.Windows.Forms.TextBox();
-            this.txtMaLoai = new System.Windows.Forms.TextBox();
             this.txtKichThuoc = new System.Windows.Forms.TextBox();
-            this.txtNuocSX = new System.Windows.Forms.TextBox();
             this.txtTenHang = new System.Windows.Forms.TextBox();
             this.txtDonvi = new System.Windows.Forms.TextBox();
             this.txtMaHang = new System.Windows.Forms.TextBox();
@@ -72,20 +72,20 @@
             this.LUONG_TON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnXoaKho = new System.Windows.Forms.Button();
+            this.btnSuaKho = new System.Windows.Forms.Button();
+            this.btnThemKho = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.txtDienThoai = new System.Windows.Forms.TextBox();
+            this.txtDia_Chi = new System.Windows.Forms.TextBox();
+            this.txtThuKho = new System.Windows.Forms.TextBox();
+            this.txtTenKho = new System.Windows.Forms.TextBox();
+            this.txtMaKho = new System.Windows.Forms.TextBox();
+            this.dgvKhoHang = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -185,8 +185,9 @@
             this.maPhieuXuat_txt = new System.Windows.Forms.TextBox();
             this.bangPhieuXuat = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.cmbMa_PN = new System.Windows.Forms.ComboBox();
+            this.cmbMa_PX = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.txtMaPX_CTVT = new System.Windows.Forms.TextBox();
             this.btnXoa_CTVT = new System.Windows.Forms.Button();
             this.btnSua_CTVT = new System.Windows.Forms.Button();
             this.btnThem_CTVT = new System.Windows.Forms.Button();
@@ -200,8 +201,6 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.txtLuongNhap_CTVT = new System.Windows.Forms.TextBox();
-            this.txtMaPN_CTVT = new System.Windows.Forms.TextBox();
-            this.txtMaHang_CTVT = new System.Windows.Forms.TextBox();
             this.dgvChiTietVatTu = new System.Windows.Forms.DataGridView();
             this.MA_HANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MA_PN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,6 +209,16 @@
             this.LUONG_NHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LUONG_XUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TON_DK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA_KHO1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_THU_KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorKho = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorCTVT = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbMaloai = new System.Windows.Forms.ComboBox();
+            this.errorKH = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbMaHang = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -217,7 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhoHang)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
@@ -237,6 +246,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bangPhieuXuat)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorKho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorKH)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -278,6 +290,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cmbMaloai);
+            this.tabPage2.Controls.Add(this.cmbNuoc_sx);
+            this.tabPage2.Controls.Add(this.cmbMa_kho);
             this.tabPage2.Controls.Add(this.btnXoa);
             this.tabPage2.Controls.Add(this.btnSua);
             this.tabPage2.Controls.Add(this.btnThem);
@@ -290,11 +305,8 @@
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.txtMaKho);
             this.tabPage2.Controls.Add(this.txtLuongTon);
-            this.tabPage2.Controls.Add(this.txtMaLoai);
             this.tabPage2.Controls.Add(this.txtKichThuoc);
-            this.tabPage2.Controls.Add(this.txtNuocSX);
             this.tabPage2.Controls.Add(this.txtTenHang);
             this.tabPage2.Controls.Add(this.txtDonvi);
             this.tabPage2.Controls.Add(this.txtMaHang);
@@ -306,6 +318,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hàng Hóa";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cmbNuoc_sx
+            // 
+            this.cmbNuoc_sx.FormattingEnabled = true;
+            this.cmbNuoc_sx.Location = new System.Drawing.Point(129, 94);
+            this.cmbNuoc_sx.Name = "cmbNuoc_sx";
+            this.cmbNuoc_sx.Size = new System.Drawing.Size(171, 23);
+            this.cmbNuoc_sx.TabIndex = 24;
+            // 
+            // cmbMa_kho
+            // 
+            this.cmbMa_kho.FormattingEnabled = true;
+            this.cmbMa_kho.Location = new System.Drawing.Point(129, 319);
+            this.cmbMa_kho.Name = "cmbMa_kho";
+            this.cmbMa_kho.Size = new System.Drawing.Size(171, 23);
+            this.cmbMa_kho.TabIndex = 23;
             // 
             // btnXoa
             // 
@@ -506,6 +534,7 @@
             this.MA_LH.MinimumWidth = 10;
             this.MA_LH.Name = "MA_LH";
             this.MA_LH.ReadOnly = true;
+            this.MA_LH.Width = 300;
             // 
             // LOAI_HANG
             // 
@@ -513,6 +542,7 @@
             this.LOAI_HANG.HeaderText = "Tên Loại Hàng";
             this.LOAI_HANG.Name = "LOAI_HANG";
             this.LOAI_HANG.ReadOnly = true;
+            this.LOAI_HANG.Width = 300;
             // 
             // txtTenLoaiHang
             // 
@@ -528,13 +558,6 @@
             this.txtMaLoaiHang.Size = new System.Drawing.Size(171, 21);
             this.txtMaLoaiHang.TabIndex = 7;
             // 
-            // txtMaKho
-            // 
-            this.txtMaKho.Location = new System.Drawing.Point(129, 323);
-            this.txtMaKho.Name = "txtMaKho";
-            this.txtMaKho.Size = new System.Drawing.Size(171, 21);
-            this.txtMaKho.TabIndex = 8;
-            // 
             // txtLuongTon
             // 
             this.txtLuongTon.Location = new System.Drawing.Point(129, 277);
@@ -542,26 +565,12 @@
             this.txtLuongTon.Size = new System.Drawing.Size(171, 21);
             this.txtLuongTon.TabIndex = 7;
             // 
-            // txtMaLoai
-            // 
-            this.txtMaLoai.Location = new System.Drawing.Point(129, 189);
-            this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(171, 21);
-            this.txtMaLoai.TabIndex = 6;
-            // 
             // txtKichThuoc
             // 
             this.txtKichThuoc.Location = new System.Drawing.Point(129, 139);
             this.txtKichThuoc.Name = "txtKichThuoc";
             this.txtKichThuoc.Size = new System.Drawing.Size(171, 21);
             this.txtKichThuoc.TabIndex = 5;
-            // 
-            // txtNuocSX
-            // 
-            this.txtNuocSX.Location = new System.Drawing.Point(129, 93);
-            this.txtNuocSX.Name = "txtNuocSX";
-            this.txtNuocSX.Size = new System.Drawing.Size(171, 21);
-            this.txtNuocSX.TabIndex = 4;
             // 
             // txtTenHang
             // 
@@ -662,20 +671,20 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.button9);
+            this.tabPage3.Controls.Add(this.btnXoaKho);
+            this.tabPage3.Controls.Add(this.btnSuaKho);
+            this.tabPage3.Controls.Add(this.btnThemKho);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.textBox15);
-            this.tabPage3.Controls.Add(this.textBox14);
-            this.tabPage3.Controls.Add(this.textBox13);
-            this.tabPage3.Controls.Add(this.textBox12);
-            this.tabPage3.Controls.Add(this.textBox11);
-            this.tabPage3.Controls.Add(this.dataGridView3);
+            this.tabPage3.Controls.Add(this.txtDienThoai);
+            this.tabPage3.Controls.Add(this.txtDia_Chi);
+            this.tabPage3.Controls.Add(this.txtThuKho);
+            this.tabPage3.Controls.Add(this.txtTenKho);
+            this.tabPage3.Controls.Add(this.txtMaKho);
+            this.tabPage3.Controls.Add(this.dgvKhoHang);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -684,32 +693,35 @@
             this.tabPage3.Text = "Kho Hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnXoaKho
             // 
-            this.button7.Location = new System.Drawing.Point(235, 416);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 31);
-            this.button7.TabIndex = 25;
-            this.button7.Text = "Xóa";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnXoaKho.Location = new System.Drawing.Point(235, 416);
+            this.btnXoaKho.Name = "btnXoaKho";
+            this.btnXoaKho.Size = new System.Drawing.Size(75, 31);
+            this.btnXoaKho.TabIndex = 25;
+            this.btnXoaKho.Text = "Xóa";
+            this.btnXoaKho.UseVisualStyleBackColor = true;
+            this.btnXoaKho.Click += new System.EventHandler(this.btnXoaKho_Click);
             // 
-            // button8
+            // btnSuaKho
             // 
-            this.button8.Location = new System.Drawing.Point(129, 416);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 31);
-            this.button8.TabIndex = 24;
-            this.button8.Text = "Sửa";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnSuaKho.Location = new System.Drawing.Point(129, 416);
+            this.btnSuaKho.Name = "btnSuaKho";
+            this.btnSuaKho.Size = new System.Drawing.Size(75, 31);
+            this.btnSuaKho.TabIndex = 24;
+            this.btnSuaKho.Text = "Sửa";
+            this.btnSuaKho.UseVisualStyleBackColor = true;
+            this.btnSuaKho.Click += new System.EventHandler(this.btnSuaKho_Click);
             // 
-            // button9
+            // btnThemKho
             // 
-            this.button9.Location = new System.Drawing.Point(25, 416);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 31);
-            this.button9.TabIndex = 23;
-            this.button9.Text = "Thêm";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnThemKho.Location = new System.Drawing.Point(25, 416);
+            this.btnThemKho.Name = "btnThemKho";
+            this.btnThemKho.Size = new System.Drawing.Size(75, 31);
+            this.btnThemKho.TabIndex = 23;
+            this.btnThemKho.Text = "Thêm";
+            this.btnThemKho.UseVisualStyleBackColor = true;
+            this.btnThemKho.Click += new System.EventHandler(this.btnThemKho_Click);
             // 
             // label15
             // 
@@ -761,48 +773,57 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Mã kho:";
             // 
-            // textBox15
+            // txtDienThoai
             // 
-            this.textBox15.Location = new System.Drawing.Point(125, 255);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(171, 21);
-            this.textBox15.TabIndex = 6;
+            this.txtDienThoai.Location = new System.Drawing.Point(125, 255);
+            this.txtDienThoai.Name = "txtDienThoai";
+            this.txtDienThoai.Size = new System.Drawing.Size(171, 21);
+            this.txtDienThoai.TabIndex = 6;
             // 
-            // textBox14
+            // txtDia_Chi
             // 
-            this.textBox14.Location = new System.Drawing.Point(125, 181);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(171, 21);
-            this.textBox14.TabIndex = 5;
+            this.txtDia_Chi.Location = new System.Drawing.Point(125, 181);
+            this.txtDia_Chi.Name = "txtDia_Chi";
+            this.txtDia_Chi.Size = new System.Drawing.Size(171, 21);
+            this.txtDia_Chi.TabIndex = 5;
             // 
-            // textBox13
+            // txtThuKho
             // 
-            this.textBox13.Location = new System.Drawing.Point(125, 326);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(171, 21);
-            this.textBox13.TabIndex = 4;
+            this.txtThuKho.Location = new System.Drawing.Point(125, 326);
+            this.txtThuKho.Name = "txtThuKho";
+            this.txtThuKho.Size = new System.Drawing.Size(171, 21);
+            this.txtThuKho.TabIndex = 4;
             // 
-            // textBox12
+            // txtTenKho
             // 
-            this.textBox12.Location = new System.Drawing.Point(125, 108);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(171, 21);
-            this.textBox12.TabIndex = 3;
+            this.txtTenKho.Location = new System.Drawing.Point(125, 108);
+            this.txtTenKho.Name = "txtTenKho";
+            this.txtTenKho.Size = new System.Drawing.Size(171, 21);
+            this.txtTenKho.TabIndex = 3;
             // 
-            // textBox11
+            // txtMaKho
             // 
-            this.textBox11.Location = new System.Drawing.Point(125, 39);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(171, 21);
-            this.textBox11.TabIndex = 2;
+            this.txtMaKho.Location = new System.Drawing.Point(125, 39);
+            this.txtMaKho.Name = "txtMaKho";
+            this.txtMaKho.Size = new System.Drawing.Size(171, 21);
+            this.txtMaKho.TabIndex = 2;
             // 
-            // dataGridView3
+            // dgvKhoHang
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(340, 24);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(696, 493);
-            this.dataGridView3.TabIndex = 1;
+            this.dgvKhoHang.AllowUserToAddRows = false;
+            this.dgvKhoHang.AllowUserToDeleteRows = false;
+            this.dgvKhoHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhoHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MA_KHO1,
+            this.TEN_KHO,
+            this.DIACHI,
+            this.DIENTHOAI,
+            this.TEN_THU_KHO});
+            this.dgvKhoHang.Location = new System.Drawing.Point(340, 24);
+            this.dgvKhoHang.Name = "dgvKhoHang";
+            this.dgvKhoHang.ReadOnly = true;
+            this.dgvKhoHang.Size = new System.Drawing.Size(696, 493);
+            this.dgvKhoHang.TabIndex = 1;
             // 
             // tabPage4
             // 
@@ -1766,8 +1787,10 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.cmbMaHang);
+            this.tabPage8.Controls.Add(this.cmbMa_PN);
+            this.tabPage8.Controls.Add(this.cmbMa_PX);
             this.tabPage8.Controls.Add(this.label40);
-            this.tabPage8.Controls.Add(this.txtMaPX_CTVT);
             this.tabPage8.Controls.Add(this.btnXoa_CTVT);
             this.tabPage8.Controls.Add(this.btnSua_CTVT);
             this.tabPage8.Controls.Add(this.btnThem_CTVT);
@@ -1781,8 +1804,6 @@
             this.tabPage8.Controls.Add(this.label47);
             this.tabPage8.Controls.Add(this.label48);
             this.tabPage8.Controls.Add(this.txtLuongNhap_CTVT);
-            this.tabPage8.Controls.Add(this.txtMaPN_CTVT);
-            this.tabPage8.Controls.Add(this.txtMaHang_CTVT);
             this.tabPage8.Controls.Add(this.dgvChiTietVatTu);
             this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
@@ -1791,6 +1812,22 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Chi Tiết Vật Tư";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // cmbMa_PN
+            // 
+            this.cmbMa_PN.FormattingEnabled = true;
+            this.cmbMa_PN.Location = new System.Drawing.Point(127, 147);
+            this.cmbMa_PN.Name = "cmbMa_PN";
+            this.cmbMa_PN.Size = new System.Drawing.Size(171, 23);
+            this.cmbMa_PN.TabIndex = 43;
+            // 
+            // cmbMa_PX
+            // 
+            this.cmbMa_PX.FormattingEnabled = true;
+            this.cmbMa_PX.Location = new System.Drawing.Point(127, 191);
+            this.cmbMa_PX.Name = "cmbMa_PX";
+            this.cmbMa_PX.Size = new System.Drawing.Size(171, 23);
+            this.cmbMa_PX.TabIndex = 42;
             // 
             // label40
             // 
@@ -1801,13 +1838,6 @@
             this.label40.Size = new System.Drawing.Size(93, 16);
             this.label40.TabIndex = 41;
             this.label40.Text = "Mã phiếu xuất:";
-            // 
-            // txtMaPX_CTVT
-            // 
-            this.txtMaPX_CTVT.Location = new System.Drawing.Point(127, 195);
-            this.txtMaPX_CTVT.Name = "txtMaPX_CTVT";
-            this.txtMaPX_CTVT.Size = new System.Drawing.Size(171, 21);
-            this.txtMaPX_CTVT.TabIndex = 40;
             // 
             // btnXoa_CTVT
             // 
@@ -1927,20 +1957,6 @@
             this.txtLuongNhap_CTVT.Size = new System.Drawing.Size(171, 21);
             this.txtLuongNhap_CTVT.TabIndex = 27;
             // 
-            // txtMaPN_CTVT
-            // 
-            this.txtMaPN_CTVT.Location = new System.Drawing.Point(127, 147);
-            this.txtMaPN_CTVT.Name = "txtMaPN_CTVT";
-            this.txtMaPN_CTVT.Size = new System.Drawing.Size(171, 21);
-            this.txtMaPN_CTVT.TabIndex = 26;
-            // 
-            // txtMaHang_CTVT
-            // 
-            this.txtMaHang_CTVT.Location = new System.Drawing.Point(127, 36);
-            this.txtMaHang_CTVT.Name = "txtMaHang_CTVT";
-            this.txtMaHang_CTVT.Size = new System.Drawing.Size(171, 21);
-            this.txtMaHang_CTVT.TabIndex = 25;
-            // 
             // dgvChiTietVatTu
             // 
             this.dgvChiTietVatTu.AllowUserToAddRows = false;
@@ -2009,6 +2025,69 @@
             this.TON_DK.Name = "TON_DK";
             this.TON_DK.ReadOnly = true;
             // 
+            // MA_KHO1
+            // 
+            this.MA_KHO1.DataPropertyName = "MA_KHO";
+            this.MA_KHO1.HeaderText = "Mã Kko";
+            this.MA_KHO1.Name = "MA_KHO1";
+            this.MA_KHO1.ReadOnly = true;
+            // 
+            // TEN_KHO
+            // 
+            this.TEN_KHO.DataPropertyName = "TEN_KHO";
+            this.TEN_KHO.HeaderText = "Tên Kho";
+            this.TEN_KHO.Name = "TEN_KHO";
+            this.TEN_KHO.ReadOnly = true;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIA_CHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            // 
+            // DIENTHOAI
+            // 
+            this.DIENTHOAI.DataPropertyName = "DIEN_THOAI";
+            this.DIENTHOAI.HeaderText = "Điện Thoại";
+            this.DIENTHOAI.Name = "DIENTHOAI";
+            this.DIENTHOAI.ReadOnly = true;
+            // 
+            // TEN_THU_KHO
+            // 
+            this.TEN_THU_KHO.DataPropertyName = "TEN_THU_KHO";
+            this.TEN_THU_KHO.HeaderText = "Tên Thủ Kho";
+            this.TEN_THU_KHO.Name = "TEN_THU_KHO";
+            this.TEN_THU_KHO.ReadOnly = true;
+            // 
+            // errorKho
+            // 
+            this.errorKho.ContainerControl = this;
+            // 
+            // errorCTVT
+            // 
+            this.errorCTVT.ContainerControl = this;
+            // 
+            // cmbMaloai
+            // 
+            this.cmbMaloai.FormattingEnabled = true;
+            this.cmbMaloai.Location = new System.Drawing.Point(129, 186);
+            this.cmbMaloai.Name = "cmbMaloai";
+            this.cmbMaloai.Size = new System.Drawing.Size(171, 23);
+            this.cmbMaloai.TabIndex = 25;
+            // 
+            // errorKH
+            // 
+            this.errorKH.ContainerControl = this;
+            // 
+            // cmbMaHang
+            // 
+            this.cmbMaHang.FormattingEnabled = true;
+            this.cmbMaHang.Location = new System.Drawing.Point(127, 36);
+            this.cmbMaHang.Name = "cmbMaHang";
+            this.cmbMaHang.Size = new System.Drawing.Size(171, 23);
+            this.cmbMaHang.TabIndex = 44;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2030,7 +2109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhoHang)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -2058,6 +2137,9 @@
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorKho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorKH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2081,11 +2163,8 @@
         private System.Windows.Forms.DataGridView dgvLoaiHang;
         private System.Windows.Forms.TextBox txtTenLoaiHang;
         private System.Windows.Forms.TextBox txtMaLoaiHang;
-        private System.Windows.Forms.TextBox txtMaKho;
         private System.Windows.Forms.TextBox txtLuongTon;
-        private System.Windows.Forms.TextBox txtMaLoai;
         private System.Windows.Forms.TextBox txtKichThuoc;
-        private System.Windows.Forms.TextBox txtNuocSX;
         private System.Windows.Forms.TextBox txtTenHang;
         private System.Windows.Forms.TextBox txtDonvi;
         private System.Windows.Forms.TextBox txtMaHang;
@@ -2096,12 +2175,12 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TextBox txtDienThoai;
+        private System.Windows.Forms.TextBox txtDia_Chi;
+        private System.Windows.Forms.TextBox txtThuKho;
+        private System.Windows.Forms.TextBox txtTenKho;
+        private System.Windows.Forms.TextBox txtMaKho;
+        private System.Windows.Forms.DataGridView dgvKhoHang;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -2186,8 +2265,6 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox txtLuongNhap_CTVT;
-        private System.Windows.Forms.TextBox txtMaPN_CTVT;
-        private System.Windows.Forms.TextBox txtMaHang_CTVT;
         private System.Windows.Forms.DataGridView dgvChiTietVatTu;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Button btnXoa;
@@ -2196,9 +2273,9 @@
         private System.Windows.Forms.Button btnXoa_LH;
         private System.Windows.Forms.Button btnSua_LH;
         private System.Windows.Forms.Button btnThem_LH;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnXoaKho;
+        private System.Windows.Forms.Button btnSuaKho;
+        private System.Windows.Forms.Button btnThemKho;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
@@ -2223,7 +2300,6 @@
         private System.Windows.Forms.Button btnXoa_CTVT;
         private System.Windows.Forms.Button btnSua_CTVT;
         private System.Windows.Forms.Button btnThem_CTVT;
-        private System.Windows.Forms.TextBox txtMaPX_CTVT;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_HANG;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_PN;
@@ -2240,12 +2316,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DON_VI_TINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn LUONG_TON;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_KHO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA_LH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI_HANG;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_KH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN_KH;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIA_CHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIEN_THOAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_LH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAI_HANG;
+        private System.Windows.Forms.ComboBox cmbMa_kho;
+        private System.Windows.Forms.ComboBox cmbNuoc_sx;
+        private System.Windows.Forms.ComboBox cmbMa_PX;
+        private System.Windows.Forms.ComboBox cmbMa_PN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA_KHO1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_KHO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN_THU_KHO;
+        private System.Windows.Forms.ErrorProvider errorKho;
+        private System.Windows.Forms.ErrorProvider errorCTVT;
+        private System.Windows.Forms.ComboBox cmbMaloai;
+        private System.Windows.Forms.ErrorProvider errorKH;
+        private System.Windows.Forms.ComboBox cmbMaHang;
     }
 }
 

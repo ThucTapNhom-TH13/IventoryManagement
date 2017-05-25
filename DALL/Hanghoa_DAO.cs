@@ -24,6 +24,18 @@ namespace DALL
             conn.Close();
             return dt;
         }
+        public static DataSet getHangHoa()
+        {
+            SqlConnection conn = SqlConnect.Connect();
+            SqlCommand command = new SqlCommand("SELECT MA_HANG,TEN_HANG FROM Danh_Muc_Hang_Hoa", conn);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.SelectCommand = command;
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
         public static void ThemHangHoa(Hanghoa hh)
         {
             SqlConnection conn = SqlConnect.Connect();

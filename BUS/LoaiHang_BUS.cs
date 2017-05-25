@@ -15,6 +15,10 @@ namespace BUS
         {
             return LoaiHang_DAO.loadLoaiHang();
         }
+        public static DataSet getLoaiHang()
+        {
+            return LoaiHang_DAO.getLoaiHang();
+        }
         public static void addLoaiHang(LoaiHang lh)
         {
             LoaiHang_DAO.ThemLoaiHang(lh);
