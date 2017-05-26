@@ -33,6 +33,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label51 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbMaloai = new System.Windows.Forms.ComboBox();
             this.cmbNuoc_sx = new System.Windows.Forms.ComboBox();
             this.cmbMa_kho = new System.Windows.Forms.ComboBox();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -86,6 +87,11 @@
             this.txtTenKho = new System.Windows.Forms.TextBox();
             this.txtMaKho = new System.Windows.Forms.TextBox();
             this.dgvKhoHang = new System.Windows.Forms.DataGridView();
+            this.MA_KHO1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN_THU_KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
@@ -185,6 +191,7 @@
             this.maPhieuXuat_txt = new System.Windows.Forms.TextBox();
             this.bangPhieuXuat = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.cmbMaHang = new System.Windows.Forms.ComboBox();
             this.cmbMa_PN = new System.Windows.Forms.ComboBox();
             this.cmbMa_PX = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -209,16 +216,11 @@
             this.LUONG_NHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LUONG_XUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TON_DK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA_KHO1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN_KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TEN_THU_KHO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorKho = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorCTVT = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cmbMaloai = new System.Windows.Forms.ComboBox();
             this.errorKH = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cmbMaHang = new System.Windows.Forms.ComboBox();
+            this.errorHH = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorLH = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -249,6 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorHH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLH)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -318,6 +322,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hàng Hóa";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cmbMaloai
+            // 
+            this.cmbMaloai.FormattingEnabled = true;
+            this.cmbMaloai.Location = new System.Drawing.Point(129, 186);
+            this.cmbMaloai.Name = "cmbMaloai";
+            this.cmbMaloai.Size = new System.Drawing.Size(171, 23);
+            this.cmbMaloai.TabIndex = 25;
             // 
             // cmbNuoc_sx
             // 
@@ -824,6 +836,41 @@
             this.dgvKhoHang.ReadOnly = true;
             this.dgvKhoHang.Size = new System.Drawing.Size(696, 493);
             this.dgvKhoHang.TabIndex = 1;
+            // 
+            // MA_KHO1
+            // 
+            this.MA_KHO1.DataPropertyName = "MA_KHO";
+            this.MA_KHO1.HeaderText = "Mã Kko";
+            this.MA_KHO1.Name = "MA_KHO1";
+            this.MA_KHO1.ReadOnly = true;
+            // 
+            // TEN_KHO
+            // 
+            this.TEN_KHO.DataPropertyName = "TEN_KHO";
+            this.TEN_KHO.HeaderText = "Tên Kho";
+            this.TEN_KHO.Name = "TEN_KHO";
+            this.TEN_KHO.ReadOnly = true;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIA_CHI";
+            this.DIACHI.HeaderText = "Địa Chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            // 
+            // DIENTHOAI
+            // 
+            this.DIENTHOAI.DataPropertyName = "DIEN_THOAI";
+            this.DIENTHOAI.HeaderText = "Điện Thoại";
+            this.DIENTHOAI.Name = "DIENTHOAI";
+            this.DIENTHOAI.ReadOnly = true;
+            // 
+            // TEN_THU_KHO
+            // 
+            this.TEN_THU_KHO.DataPropertyName = "TEN_THU_KHO";
+            this.TEN_THU_KHO.HeaderText = "Tên Thủ Kho";
+            this.TEN_THU_KHO.Name = "TEN_THU_KHO";
+            this.TEN_THU_KHO.ReadOnly = true;
             // 
             // tabPage4
             // 
@@ -1813,6 +1860,14 @@
             this.tabPage8.Text = "Chi Tiết Vật Tư";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // cmbMaHang
+            // 
+            this.cmbMaHang.FormattingEnabled = true;
+            this.cmbMaHang.Location = new System.Drawing.Point(127, 36);
+            this.cmbMaHang.Name = "cmbMaHang";
+            this.cmbMaHang.Size = new System.Drawing.Size(171, 23);
+            this.cmbMaHang.TabIndex = 44;
+            // 
             // cmbMa_PN
             // 
             this.cmbMa_PN.FormattingEnabled = true;
@@ -2025,41 +2080,6 @@
             this.TON_DK.Name = "TON_DK";
             this.TON_DK.ReadOnly = true;
             // 
-            // MA_KHO1
-            // 
-            this.MA_KHO1.DataPropertyName = "MA_KHO";
-            this.MA_KHO1.HeaderText = "Mã Kko";
-            this.MA_KHO1.Name = "MA_KHO1";
-            this.MA_KHO1.ReadOnly = true;
-            // 
-            // TEN_KHO
-            // 
-            this.TEN_KHO.DataPropertyName = "TEN_KHO";
-            this.TEN_KHO.HeaderText = "Tên Kho";
-            this.TEN_KHO.Name = "TEN_KHO";
-            this.TEN_KHO.ReadOnly = true;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIA_CHI";
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            // 
-            // DIENTHOAI
-            // 
-            this.DIENTHOAI.DataPropertyName = "DIEN_THOAI";
-            this.DIENTHOAI.HeaderText = "Điện Thoại";
-            this.DIENTHOAI.Name = "DIENTHOAI";
-            this.DIENTHOAI.ReadOnly = true;
-            // 
-            // TEN_THU_KHO
-            // 
-            this.TEN_THU_KHO.DataPropertyName = "TEN_THU_KHO";
-            this.TEN_THU_KHO.HeaderText = "Tên Thủ Kho";
-            this.TEN_THU_KHO.Name = "TEN_THU_KHO";
-            this.TEN_THU_KHO.ReadOnly = true;
-            // 
             // errorKho
             // 
             this.errorKho.ContainerControl = this;
@@ -2068,25 +2088,17 @@
             // 
             this.errorCTVT.ContainerControl = this;
             // 
-            // cmbMaloai
-            // 
-            this.cmbMaloai.FormattingEnabled = true;
-            this.cmbMaloai.Location = new System.Drawing.Point(129, 186);
-            this.cmbMaloai.Name = "cmbMaloai";
-            this.cmbMaloai.Size = new System.Drawing.Size(171, 23);
-            this.cmbMaloai.TabIndex = 25;
-            // 
             // errorKH
             // 
             this.errorKH.ContainerControl = this;
             // 
-            // cmbMaHang
+            // errorHH
             // 
-            this.cmbMaHang.FormattingEnabled = true;
-            this.cmbMaHang.Location = new System.Drawing.Point(127, 36);
-            this.cmbMaHang.Name = "cmbMaHang";
-            this.cmbMaHang.Size = new System.Drawing.Size(171, 23);
-            this.cmbMaHang.TabIndex = 44;
+            this.errorHH.ContainerControl = this;
+            // 
+            // errorLH
+            // 
+            this.errorLH.ContainerControl = this;
             // 
             // Form1
             // 
@@ -2140,6 +2152,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorHH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorLH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2336,6 +2350,8 @@
         private System.Windows.Forms.ComboBox cmbMaloai;
         private System.Windows.Forms.ErrorProvider errorKH;
         private System.Windows.Forms.ComboBox cmbMaHang;
+        private System.Windows.Forms.ErrorProvider errorHH;
+        private System.Windows.Forms.ErrorProvider errorLH;
     }
 }
 

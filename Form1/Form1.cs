@@ -99,8 +99,11 @@ namespace Form1
             {
                 unEnable();
                 clearData();
+                cmbMaHang.DataBindings.Clear();
+                cmbMa_PN.DataBindings.Clear();
+                cmbMa_PX.DataBindings.Clear();
                 cmbMaHang.DataSource = Hanghoa_BUS.getHangHoa().Tables[0];
-                cmbMaHang.DisplayMember = "TEN_HANG";
+                cmbMaHang.DisplayMember = "MA_HANG";
                 cmbMaHang.DisplayMember = "MA_HANG";
                 cmbMa_PN.DataSource = PhieuNhap_BUS.getMaPN().Tables[0];
                 cmbMa_PN.DisplayMember = "MA_PN";
@@ -143,13 +146,25 @@ namespace Form1
                 else
                 {
                     int n = 0;
+                    if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false)
+                    {
+                        errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập số");
+                    }
                     if (txtLuongXuat_CTVT.Text.Trim().Length == 0)
                     {
                         errorCTVT.SetError(txtLuongXuat_CTVT, "không được bỏ trống");
                     }
+                    if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false)
+                    {
+                        errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập số");
+                    }
                     if (txtLuongNhap_CTVT.Text.Trim().Length == 0)
                     {
                         errorCTVT.SetError(txtLuongNhap_CTVT, "không được bỏ trống");
+                    }
+                    if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
+                    {
+                        errorCTVT.SetError(txtTonDK_CTVT, "không được nhập số");
                     }
                     if (txtTonDK_CTVT.Text.Trim().Length == 0)
                     {
@@ -184,28 +199,37 @@ namespace Form1
                     catch
                     {
                         MessageBox.Show("Loi");
+                        Enabal();
                     }
                 }
                 else
                 {
-
-                    if (txtTenKho.Text.Trim().Length == 0)
+                    int n = 0;
+                    if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false)
                     {
-                        errorKho.SetError(txtTenKho, "không được bỏ trống");
+                        errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập số");
                     }
-                    if (txtDienThoai.Text.Trim().Length == 0)
+                    if (txtLuongXuat_CTVT.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtDienThoai, "không được bỏ trống");
+                        errorCTVT.SetError(txtLuongXuat_CTVT, "không được bỏ trống");
                     }
-                    if (txtDia_Chi.Text.Trim().Length == 0)
+                    if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false)
                     {
-                        errorKho.SetError(txtDia_Chi, "không được bỏ trống");
+                        errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập số");
                     }
-                    if (txtThuKho.Text.Trim().Length == 0)
+                    if (txtLuongNhap_CTVT.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtThuKho, "không được bỏ trống");
+                        errorCTVT.SetError(txtLuongNhap_CTVT, "không được bỏ trống");
                     }
-                    Enabal_Kho();
+                    if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
+                    {
+                        errorCTVT.SetError(txtTonDK_CTVT, "không được nhập số");
+                    }
+                    if (txtTonDK_CTVT.Text.Trim().Length == 0)
+                    {
+                        errorCTVT.SetError(txtTonDK_CTVT, "không được bỏ trống");
+                    }
+                    Enabal();
                 }
             }
         }
@@ -622,6 +646,7 @@ namespace Form1
             txtKichThuoc.DataBindings.Add("Text", dgvHangHoa.DataSource, "KICH_THUOC");
             cmbMaloai.DataBindings.Clear();
             cmbMaloai.DataBindings.Add("Text", dgvHangHoa.DataSource, "MA_LOAI_HANG");
+            
             txtDonvi.DataBindings.Clear();
             txtDonvi.DataBindings.Add("Text", dgvHangHoa.DataSource, "DON_VI_TINH");
             txtLuongTon.DataBindings.Clear();
@@ -634,16 +659,20 @@ namespace Form1
         {
             if (btnThem.Text == "Thêm")
             {
+                errorHH.Clear();
+                cmbNuoc_sx.DataBindings.Clear();
+                cmbMaloai.DataBindings.Clear();
+                cmbMa_kho.DataBindings.Clear();
                 unEnable_hh();
                 clearData_hh();
                 cmbNuoc_sx.DataSource = NuocSX_BUS.NuocSX_getma().Tables[0];
-                cmbNuoc_sx.DisplayMember = "NUOC_SX";
+                cmbNuoc_sx.DisplayMember = "MA_NUOC_SX";
                 cmbNuoc_sx.ValueMember = "MA_NUOC_SX";
                 cmbMa_kho.DataSource = KhoHang_BUS.getMakho().Tables[0];
-                cmbMa_kho.DisplayMember = "TEN_KHO";
+                cmbMa_kho.DisplayMember = "MA_KHO";
                 cmbMa_kho.ValueMember = "MA_KHO";
                 cmbMaloai.DataSource = LoaiHang_BUS.getLoaiHang().Tables[0];
-                cmbMaloai.DisplayMember = "LOAI_HANG";
+                cmbMaloai.DisplayMember = "MA_LOAI_HANG";
                 cmbMaloai.ValueMember = "MA_LOAI_HANG";
                 txtMaHang.Enabled = false;
                 btnThem.Text = "Lưu Thêm";
@@ -657,60 +686,62 @@ namespace Form1
                 btnXoa.Enabled = true;
                 if (!Catch.cNullTB(txtTenHang.Text) & !Catch.cNullTB(cmbNuoc_sx.Text) & !Catch.cNullTB(cmbMaloai.Text) & !Catch.cNullTB(cmbMa_kho.Text))
                 {
-                    try
-                    {
-                        
-                        string tenhang = txtTenHang.Text.Trim();
-                        int manuoc = Convert.ToInt32(cmbNuoc_sx.Text.Trim());
-                        string kichthuoc = txtKichThuoc.Text.Trim();
-                        int maloai = Convert.ToInt32(cmbMaloai.Text.Trim());
-                        string donvi = txtDonvi.Text.Trim();
-                        int luongton = Convert.ToInt32(txtLuongTon.Text.Trim());
-                        int makho = Convert.ToInt32(cmbMa_kho.Text.Trim());
+                        try
+                        {
 
-                        Hanghoa hh = new Hanghoa(tenhang, manuoc, kichthuoc, maloai, donvi, luongton, makho);
-                        Hanghoa_BUS.addHangHoa(hh);
-                        showHangHoa();
-                        buildingHangHoa();
-                        Enabal_hh();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Loi");
-                    }
+                            string tenhang = txtTenHang.Text.Trim();
+                            
+                            int manuoc = Convert.ToInt32(cmbNuoc_sx.Text.Trim());
+                            string kichthuoc = txtKichThuoc.Text.Trim();
+                            int maloai = Convert.ToInt32(cmbMaloai.Text.Trim());
+                            string donvi = txtDonvi.Text.Trim();
+                            int luongton = Convert.ToInt32(txtLuongTon.Text.Trim());
+                            int makho = Convert.ToInt32(cmbMa_kho.Text.Trim());
+                            Hanghoa hh = new Hanghoa(tenhang, manuoc, kichthuoc, maloai, donvi, luongton, makho);
+                            Hanghoa_BUS.addHangHoa(hh);
+                            showHangHoa();
+                            buildingHangHoa();
+                            Enabal_hh();
+                        }
+                        catch
+                        {
+                            int n = 0;
+                            if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
+                            {
+                                errorHH.SetError(txtKichThuoc, "không được nhập số");
+                            }
+                            if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
+                            {
+                                errorHH.SetError(txtKichThuoc, "không được nhập số");
+                            }
+                            if (int.TryParse(txtLuongTon.Text.Trim(), out n) == false)
+                            {
+                                errorHH.SetError(txtLuongTon, "không được nhập số");
+                            }
+                            Enabal_hh();
+                        }
+
                 }
                 else
                 {
-                    int n = 0;
+                    
                     if (txtTenHang.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtTenHang, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
-                    {
-                        errorKho.SetError(txtKichThuoc, "không được nhập số");
+                        errorHH.SetError(txtTenHang, "không được bỏ trống");
                     }
                     if (txtKichThuoc.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtKichThuoc, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtDonvi.Text.Trim(), out n) == false)
-                    {
-                        errorKho.SetError(txtDonvi, "không được nhập số");
+                        errorHH.SetError(txtKichThuoc, "không được bỏ trống");
                     }
                     if (txtDonvi.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtDonvi, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtLuongTon.Text.Trim(), out n) == false)
-                    {
-                        errorKho.SetError(txtLuongTon, "không được nhập số");
+                        errorHH.SetError(txtDonvi, "không được bỏ trống");
                     }
                     if (txtLuongTon.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtLuongTon, "không được bỏ trống");
+                        errorHH.SetError(txtLuongTon, "không được bỏ trống");
                     }
-                    Enabal_Kho();
+                    Enabal_hh();
                 }
             }
             else if (btnThem.Text == "Lưu Sửa")
@@ -739,41 +770,42 @@ namespace Form1
                     }
                     catch
                     {
-                        MessageBox.Show("Loi");
+                        int n = 0;
+                        if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
+                        {
+                            errorHH.SetError(txtKichThuoc, "không được nhập số");
+                        }
+                        if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
+                        {
+                            errorHH.SetError(txtKichThuoc, "không được nhập số");
+                        }
+                        if (int.TryParse(txtLuongTon.Text.Trim(), out n) == false)
+                        {
+                            errorHH.SetError(txtLuongTon, "không được nhập số");
+                        }
+                        Enabal_hh();
                     }
                 }
                 else
                 {
-                    int n = 0;
+
                     if (txtTenHang.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtTenHang, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
-                    {
-                        errorKho.SetError(txtKichThuoc, "không được nhập số");
+                        errorHH.SetError(txtTenHang, "không được bỏ trống");
                     }
                     if (txtKichThuoc.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtKichThuoc, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtDonvi.Text.Trim(), out n) == false)
-                    {
-                        errorKho.SetError(txtDonvi, "không được nhập số");
+                        errorHH.SetError(txtKichThuoc, "không được bỏ trống");
                     }
                     if (txtDonvi.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtDonvi, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtLuongTon.Text.Trim(), out n) == false)
-                    {
-                        errorKho.SetError(txtLuongTon, "không được nhập số");
+                        errorHH.SetError(txtDonvi, "không được bỏ trống");
                     }
                     if (txtLuongTon.Text.Trim().Length == 0)
                     {
-                        errorKho.SetError(txtLuongTon, "không được bỏ trống");
+                        errorHH.SetError(txtLuongTon, "không được bỏ trống");
                     }
-                    Enabal_Kho();
+                    Enabal_hh();
                 }
             }
         }
@@ -1068,7 +1100,11 @@ namespace Form1
                 }
                 else
                 {
-                    MessageBox.Show("Chưa nhập dữ liệu");
+                    if (txtTenLoaiHang.Text.Trim().Length == 0)
+                    {
+                        errorLH.SetError(txtTenLoaiHang, "không được bỏ trống");
+                    }
+                   
                 }
             }
             else if (btnThem_LH.Text == "Lưu Sửa")
@@ -1096,7 +1132,10 @@ namespace Form1
                 }
                 else
                 {
-                    MessageBox.Show("Chưa nhập dữ liệu");
+                    if (txtTenLoaiHang.Text.Trim().Length == 0)
+                    {
+                        errorLH.SetError(txtTenLoaiHang, "không được bỏ trống");
+                    }
                 }
             }
         }
@@ -1139,6 +1178,11 @@ namespace Form1
             }
         }
 
+        /// <summary>
+        /// NHA CUNG CAP
+        /// </summary>
+        /// <param name="nhacc"></param>
+        /// <param name="nuocsx"></param>
         public void NhaCungCapTab_enableTextbox(bool nhacc, bool nuocsx)
         {
             textBox16.Enabled = false;
