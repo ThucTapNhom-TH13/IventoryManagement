@@ -99,6 +99,7 @@ namespace Form1
             {
                 unEnable();
                 clearData();
+                errorCTVT.Clear();
                 cmbMaHang.DataBindings.Clear();
                 cmbMa_PN.DataBindings.Clear();
                 cmbMa_PX.DataBindings.Clear();
@@ -120,7 +121,7 @@ namespace Form1
                 btnThem_CTVT.Text = "Thêm";
                 btnSua_CTVT.Text = "Sửa";
                 btnXoa_CTVT.Enabled = true;
-                if (!Catch.cNullTB(cmbMaHang.Text)  & !Catch.cNullTB(txtLuongXuat_CTVT.Text) & !Catch.cNullTB(txtLuongNhap_CTVT.Text) & !Catch.cNullTB(txtTonDK_CTVT.Text))
+                if (!Catch.cNullTB(cmbMaHang.Text)  & !Catch.cNullTB(txtTonDK_CTVT.Text))
                 {
                     try
                     {
@@ -140,38 +141,30 @@ namespace Form1
                     }
                     catch
                     {
+                        int n = 0;
+                        if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false)
+                        {
+                            errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập số");
+                        }
+                        if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false)
+                        {
+                            errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập số");
+                        }
+                        if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
+                        {
+                            errorCTVT.SetError(txtTonDK_CTVT, "không được nhập số");
+                        }
                         MessageBox.Show("Loi");
                     }
                 }
                 else
                 {
-                    int n = 0;
-                    if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false)
-                    {
-                        errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập số");
-                    }
-                    if (txtLuongXuat_CTVT.Text.Trim().Length == 0)
-                    {
-                        errorCTVT.SetError(txtLuongXuat_CTVT, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false)
-                    {
-                        errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập số");
-                    }
-                    if (txtLuongNhap_CTVT.Text.Trim().Length == 0)
-                    {
-                        errorCTVT.SetError(txtLuongNhap_CTVT, "không được bỏ trống");
-                    }
-                    if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
-                    {
-                        errorCTVT.SetError(txtTonDK_CTVT, "không được nhập số");
-                    }
                     if (txtTonDK_CTVT.Text.Trim().Length == 0)
                     {
                         errorCTVT.SetError(txtTonDK_CTVT, "không được bỏ trống");
                     }
-                    Enabal();
                 }
+                Enabal();
             }
             else if (btnThem_CTVT.Text == "Lưu Sửa")
             {
@@ -198,39 +191,41 @@ namespace Form1
                     }
                     catch
                     {
+                        int n = 0;
+                        if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false)
+                        {
+                            errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập chữ");
+                        }
+                        if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false)
+                        {
+                            errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập chữ");
+                        }
+                        if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
+                        {
+                            errorCTVT.SetError(txtTonDK_CTVT, "không được nhập chữ");
+                        }
                         MessageBox.Show("Loi");
-                        Enabal();
                     }
                 }
                 else
                 {
-                    int n = 0;
-                    if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false)
-                    {
-                        errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập số");
-                    }
+
                     if (txtLuongXuat_CTVT.Text.Trim().Length == 0)
                     {
                         errorCTVT.SetError(txtLuongXuat_CTVT, "không được bỏ trống");
                     }
-                    if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false)
-                    {
-                        errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập số");
-                    }
+
                     if (txtLuongNhap_CTVT.Text.Trim().Length == 0)
                     {
                         errorCTVT.SetError(txtLuongNhap_CTVT, "không được bỏ trống");
                     }
-                    if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
-                    {
-                        errorCTVT.SetError(txtTonDK_CTVT, "không được nhập số");
-                    }
+
                     if (txtTonDK_CTVT.Text.Trim().Length == 0)
                     {
                         errorCTVT.SetError(txtTonDK_CTVT, "không được bỏ trống");
                     }
-                    Enabal();
                 }
+                Enabal();
             }
         }
 
@@ -239,6 +234,19 @@ namespace Form1
             if (btnSua_CTVT.Text == "Sửa")
             {
                 unEnable();
+                errorCTVT.Clear();
+                cmbMaHang.DataBindings.Clear();
+                cmbMa_PN.DataBindings.Clear();
+                cmbMa_PX.DataBindings.Clear();
+                cmbMaHang.DataSource = Hanghoa_BUS.getHangHoa().Tables[0];
+                cmbMaHang.DisplayMember = "MA_HANG";
+                cmbMaHang.DisplayMember = "MA_HANG";
+                cmbMa_PN.DataSource = PhieuNhap_BUS.getMaPN().Tables[0];
+                cmbMa_PN.DisplayMember = "MA_PN";
+                cmbMa_PN.DisplayMember = "MA_PN";
+                cmbMa_PX.DataSource = PhieuXuat_BUS.getPX().Tables[0];
+                cmbMa_PX.DisplayMember = "MA_PX";
+                cmbMa_PX.DisplayMember = "MA_PX";
                 cmbMaHang.Enabled = false;
                 cmbMa_PN.Enabled = false;
                 cmbMa_PX.Enabled = false;
@@ -708,17 +716,16 @@ namespace Form1
                             int n = 0;
                             if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
                             {
-                                errorHH.SetError(txtKichThuoc, "không được nhập số");
+                                errorHH.SetError(txtKichThuoc, "không được nhập chữ");
                             }
                             if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
                             {
-                                errorHH.SetError(txtKichThuoc, "không được nhập số");
+                                errorHH.SetError(txtKichThuoc, "không được nhập chữ");
                             }
                             if (int.TryParse(txtLuongTon.Text.Trim(), out n) == false)
                             {
-                                errorHH.SetError(txtLuongTon, "không được nhập số");
+                                errorHH.SetError(txtLuongTon, "không được nhập chữ");
                             }
-                            Enabal_hh();
                         }
 
                 }
@@ -741,8 +748,9 @@ namespace Form1
                     {
                         errorHH.SetError(txtLuongTon, "không được bỏ trống");
                     }
-                    Enabal_hh();
+                   
                 }
+                Enabal_hh();
             }
             else if (btnThem.Text == "Lưu Sửa")
             {
@@ -773,17 +781,16 @@ namespace Form1
                         int n = 0;
                         if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
                         {
-                            errorHH.SetError(txtKichThuoc, "không được nhập số");
+                            errorHH.SetError(txtKichThuoc, "không được nhập chữ");
                         }
                         if (int.TryParse(txtKichThuoc.Text.Trim(), out n) == false)
                         {
-                            errorHH.SetError(txtKichThuoc, "không được nhập số");
+                            errorHH.SetError(txtKichThuoc, "không được nhập chữ");
                         }
                         if (int.TryParse(txtLuongTon.Text.Trim(), out n) == false)
                         {
-                            errorHH.SetError(txtLuongTon, "không được nhập số");
+                            errorHH.SetError(txtLuongTon, "không được nhập chữ");
                         }
-                        Enabal_hh();
                     }
                 }
                 else
@@ -805,8 +812,9 @@ namespace Form1
                     {
                         errorHH.SetError(txtLuongTon, "không được bỏ trống");
                     }
-                    Enabal_hh();
+                    
                 }
+                Enabal_hh();
             }
         }
 
@@ -815,6 +823,19 @@ namespace Form1
             if (btnSua.Text == "Sửa")
             {
                 unEnable_hh();
+                errorHH.Clear();
+                cmbNuoc_sx.DataBindings.Clear();
+                cmbMaloai.DataBindings.Clear();
+                cmbMa_kho.DataBindings.Clear();
+                cmbNuoc_sx.DataSource = NuocSX_BUS.NuocSX_getma().Tables[0];
+                cmbNuoc_sx.DisplayMember = "MA_NUOC_SX";
+                cmbNuoc_sx.ValueMember = "MA_NUOC_SX";
+                cmbMa_kho.DataSource = KhoHang_BUS.getMakho().Tables[0];
+                cmbMa_kho.DisplayMember = "MA_KHO";
+                cmbMa_kho.ValueMember = "MA_KHO";
+                cmbMaloai.DataSource = LoaiHang_BUS.getLoaiHang().Tables[0];
+                cmbMaloai.DisplayMember = "MA_LOAI_HANG";
+                cmbMaloai.ValueMember = "MA_LOAI_HANG";
                 txtMaHang.Enabled = false;
                 btnThem.Text = "Lưu Sửa";
                 btnSua.Text = "Cannel";
@@ -897,6 +918,7 @@ namespace Form1
             {
                 unEnable_KH();
                 clearData_KH();
+                errorKH.Clear();
                 txtMaKh.Enabled = false;
                 btnThem_KH.Text = "Lưu Thêm";
                 btnSua_KH.Text = "Cannel";
@@ -944,6 +966,7 @@ namespace Form1
                     }
 
                 }
+                Enabal_KH();
             }
             else if (btnThem_KH.Text == "Lưu Sửa")
             {
@@ -988,6 +1011,7 @@ namespace Form1
                         errorKH.SetError(txtDiaChi, "không được bỏ trống");
                     }
                 }
+                Enabal_KH();
             }
         }
 
@@ -996,6 +1020,7 @@ namespace Form1
             if (btnSua_KH.Text == "Sửa")
             {
                 unEnable_KH();
+                errorKH.Clear();
                 txtMaKh.Enabled = false;
                 btnThem_KH.Text = "Lưu Sửa";
                 btnSua_KH.Text = "Cannel";
@@ -1068,8 +1093,8 @@ namespace Form1
             if (btnThem_LH.Text == "Thêm")
             {
                 unEnable_LH();
-                clearData_hh();
-                
+                clearData_LH();
+                errorLH.Clear();
                 txtMaLoaiHang.Enabled = false;
                 btnThem_LH.Text = "Lưu Thêm";
                 btnSua_LH.Text = "Cannel";
@@ -1106,6 +1131,7 @@ namespace Form1
                     }
                    
                 }
+                Enabal_LH();
             }
             else if (btnThem_LH.Text == "Lưu Sửa")
             {
@@ -1137,6 +1163,7 @@ namespace Form1
                         errorLH.SetError(txtTenLoaiHang, "không được bỏ trống");
                     }
                 }
+                Enabal_LH();
             }
         }
 
@@ -1145,6 +1172,7 @@ namespace Form1
             if (btnSua_LH.Text == "Sửa")
             {
                 unEnable_LH();
+                errorLH.Clear();
                 txtMaLoaiHang.Enabled = false;
                 btnThem_LH.Text = "Lưu Sửa";
                 btnSua_LH.Text = "Cannel";
@@ -1584,6 +1612,7 @@ namespace Form1
             {
                 unEnable_Kho();
                 clearData_Kho();
+                errorKho.Clear();
                 txtMaKho.Enabled = false;
                 btnThemKho.Text = "Lưu";
                 btnSuaKho.Text = "Cannel";
@@ -1633,8 +1662,9 @@ namespace Form1
                     {
                         errorKho.SetError(txtThuKho, "không được bỏ trống");
                     }
-                    Enabal_Kho();
+                   
                 }
+                Enabal_Kho();
             }
             else if (btnThemKho.Text == "Lưu ")
             {
@@ -1681,8 +1711,9 @@ namespace Form1
                     {
                         errorKho.SetError(txtThuKho, "không được bỏ trống");
                     }
-                    Enabal_Kho();
+                   
                 }
+                Enabal_Kho();
             }
         }
 
@@ -1691,6 +1722,7 @@ namespace Form1
             if (btnSuaKho.Text == "Sửa")
             {
                 unEnable_Kho();
+                clearData_Kho();
                 txtMaKho.Enabled = false;
                 btnThemKho.Text = "Lưu ";
                 btnSuaKho.Text = "Cannel";
