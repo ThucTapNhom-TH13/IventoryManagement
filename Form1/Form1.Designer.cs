@@ -1328,6 +1328,7 @@
             this.button22.TabIndex = 28;
             this.button22.Text = "Xóa";
             this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button23
             // 
@@ -1337,6 +1338,7 @@
             this.button23.TabIndex = 27;
             this.button23.Text = "Sửa";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button24
             // 
@@ -1346,6 +1348,7 @@
             this.button24.TabIndex = 26;
             this.button24.Text = "Thêm";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // label31
             // 
@@ -1439,6 +1442,7 @@
             this.dataGridView8.Name = "dataGridView8";
             this.dataGridView8.Size = new System.Drawing.Size(696, 274);
             this.dataGridView8.TabIndex = 2;
+            this.dataGridView8.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView8_CellClick);
             // 
             // groupBox4
             // 
@@ -1469,6 +1473,7 @@
             this.button19.TabIndex = 27;
             this.button19.Text = "Xóa";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button20
             // 
@@ -1478,6 +1483,7 @@
             this.button20.TabIndex = 26;
             this.button20.Text = "Sửa";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button21
             // 
@@ -1487,12 +1493,13 @@
             this.button21.TabIndex = 25;
             this.button21.Text = "Thêm";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(110, 76);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(173, 21);
             this.dateTimePicker1.TabIndex = 24;
             // 
             // label26
@@ -1563,6 +1570,7 @@
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.Size = new System.Drawing.Size(696, 214);
             this.dataGridView7.TabIndex = 1;
+            this.dataGridView7.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellClick);
             // 
             // tabPage7
             // 

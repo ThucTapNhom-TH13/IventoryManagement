@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietPhieuNhap_BUS.cs" />
     <Compile Include="ChiTietPhieuXuat_BUS.cs" />
     <Compile Include="CTVT_BUS.cs" />
     <Compile Include="Hanghoa_BUS.cs" />

@@ -51,3 +51,55 @@ begin
 	delete from Chi_Tiet_Phieu_Xuat
 	where MA_HANG = @mahang
 end
+ /////////////////////////////////////////////////////////////////////////
+
+ create proc PhieuNhap_getAll as
+ begin
+	select * from Phieu_Nhap
+ end
+
+create proc chiTietPhieuNhap_find(@mapn int) as
+begin
+select * from Chi_Tiet_Phieu_Nhap where MA_PN = @mapn
+end
+
+create proc PhieuNhap_insert(@ngayNhap date, @maNCC int, @maKho int) as 
+begin
+	insert into Phieu_Nhap(NGAY_NHAP, MA_NHA_CC, MA_KHO)
+	values (@ngayNhap, @maNCC, @maKho)
+end
+
+create proc PhieuNhap_edit(@ngayNhap date, @maNCC int, @maKho int, @maPN int) as 
+begin
+	update Phieu_Nhap
+	set NGAY_NHAP = @ngayNhap, MA_NHA_CC = @maNCC, MA_KHO = @maKho
+	where MA_PN = @maPN
+end
+
+create proc PhieuNhap_delete(@maPN int) as
+begin
+	delete from Chi_Tiet_Phieu_Nhap where MA_PN = @maPN
+
+	update Chi_Tiet_Vat_Tu set MA_PN = null where MA_PN = @maPN
+
+	delete from Phieu_Nhap where MA_PN = @maPN
+end
+
+create proc ChiTietPhieuNhap_insert(@mapn int, @mahang int, @slgia int, @slthuc int, @dongia int) as
+begin
+	insert into Chi_Tiet_Phieu_Nhap(MA_PN, MA_HANG, SL_THEO_CT, SL_THUC, DON_GIA)
+	values (@mapn, @mahang , @slgia , @slthuc , @dongia )
+end
+
+create proc ChiTietPhieuNhap_update(@mahang int, @slgia int, @slthuc int, @dongia int, @mapn int) as
+begin
+	update Chi_Tiet_Phieu_Nhap
+	set MA_HANG = @mahang, SL_THEO_CT = @slgia, SL_THUC = @slthuc, DON_GIA = @dongia
+	where MA_PN = @mapn
+end
+
+
+create proc ChiTietPhieuNhap_delete( @mapn int) as
+begin
+	delete from Chi_Tiet_Phieu_Nhap where MA_PN = @mapn
+end

@@ -25,6 +25,9 @@ namespace Form1
             NhaCungCapTab_enableTextbox(false, false);
             loadBangNhaCungCap();
             loadBangNuocSanXuat();
+            Load_BangPhieuNhap();
+            enablePhieuNhap(false, false, false, false);
+            enableCTPN(false, false, false, false, false);
 
             Enabal_Kho();
             showKhoHang();
@@ -41,10 +44,30 @@ namespace Form1
             Enabal_LH();
             showLoaiHang();
             buildingLoaiHang();
+
         }
         /// <summary>
         /// CTVT
         /// </summary>
+        /// 
+        public void enablePhieuNhap(bool mapn, bool ngaynhap, bool maNCC, bool maKho)
+        {
+            textBox30.Enabled = mapn;
+            dateTimePicker1.Enabled = ngaynhap;
+            textBox28.Enabled = maNCC;
+            textBox25.Enabled = maKho;
+        }
+
+        public void enableCTPN(bool mapn, bool mahang, bool soluongtheoct, bool soluongthuc, bool dongia)
+        {
+            textBox34.Enabled = mapn;
+            textBox33.Enabled = mahang;
+            textBox32.Enabled = soluongtheoct;
+            textBox31.Enabled = soluongthuc;
+            textBox29.Enabled = dongia;
+
+        }
+
         public void showCTVT()
         {
             dgvChiTietVatTu.DataSource = CTVT_BUS.loadCTVT();
@@ -318,6 +341,12 @@ namespace Form1
         {
             DataView table = PhieuXuat_BUS.PhieuXuat_getAll();
             bangPhieuXuat.DataSource = table;
+        }
+
+        private void Load_BangPhieuNhap()
+        {
+            DataView table = PhieuNhap_BUS.PhieuNhap_getAll();
+            dataGridView7.DataSource = table;
         }
 
         private void bangPhieuXuat_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1754,6 +1783,372 @@ namespace Form1
             {
                 MessageBox.Show("Chưa nhập dữ liệu");
             }
+        }
+
+        private void clearPhieuNhapData()
+        {
+            textBox30.Text = "";
+            textBox28.Text = "";
+            textBox25.Text = "";
+        }
+
+        private void button21_Click(object sender, EventArgs e) //them
+        {
+            if (button21.Text.Equals("Thêm"))
+            {
+                button21.Text = "Lưu";
+                button20.Text = "Hủy";
+                enablePhieuNhap(false, true, true, true);
+                clearPhieuNhapData();
+            }
+            else if (button21.Text.Equals("Hủy"))
+            {
+                button21.Text = "Thêm";
+                button20.Text = "Sửa";
+                enablePhieuNhap(false, false, false, false);
+                clearPhieuNhapData();
+            }
+            else if (button21.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    if (textBox28.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("Vui lòng nhập mã nhà cung cấp");
+                        return;
+                    }
+                    if (textBox25.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("Vui lòng nhập mã nhà kho");
+                        return;
+                    }
+                    int mancc = Int32.Parse(textBox28.Text);
+                    int makho = Int32.Parse(textBox25.Text);
+                    PhieuNhap phieuNhap = new PhieuNhap(mancc, makho, dateTimePicker1.Value);
+                    bool result = PhieuNhap_BUS.addPhieuNhap(phieuNhap);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Thêm phiếu nhập thành công");
+                    }
+                    enablePhieuNhap(false, false, false, false);
+                    clearPhieuNhapData();
+                    Load_BangPhieuNhap();
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("dữ liệu không hợp lệ");
+                }
+
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e) // sua
+        {
+            if (button20.Text.Equals("Sửa"))
+            {
+                button20.Text = "Lưu";
+                button21.Text = "Hủy";
+                enablePhieuNhap(false, true, true, true);
+            }
+            else if (button20.Text.Equals("Hủy"))
+            {
+                button21.Text = "Thêm";
+                button20.Text = "Sửa";
+                enablePhieuNhap(false, true, true, true);
+                clearPhieuNhapData();
+            }
+            else if (button20.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    if (textBox30.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("Vui lòng một phiếu nhập để sửa");
+                        return;
+                    }
+                    if (textBox28.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("Vui lòng nhập mã nhà cung cấp");
+                        return;
+                    }
+                    if (textBox25.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("Vui lòng nhập mã nhà kho");
+                        return;
+                    }
+                    int mapn = Int32.Parse(textBox30.Text);
+                    int mancc = Int32.Parse(textBox28.Text);
+                    int makho = Int32.Parse(textBox25.Text);
+                    PhieuNhap phieuNhap = new PhieuNhap(mapn, mancc, makho, dateTimePicker1.Value);
+                    bool result = PhieuNhap_BUS.editPhieuNhap(phieuNhap);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Sửa phiếu nhập thành công");
+                    }
+                    enablePhieuNhap(false, false, false, false);
+                    Load_BangPhieuNhap();
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("dữ liệu không hợp lệ");
+                }
+
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e) //xoa
+        {
+            if (textBox30.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Vui lòng một phiếu nhập để xóa");
+                return;
+            }
+            int mapn = Int32.Parse(textBox30.Text);
+            bool result = PhieuNhap_BUS.deletePhieuNhap(mapn);
+            if (result)
+            {
+                System.Windows.Forms.MessageBox.Show("Xóa phiếu nhập thành công");
+            }
+            Load_BangPhieuNhap();
+        }
+
+        private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int CurrentIndex = dataGridView7.CurrentCell.RowIndex;
+            int maPhieuNhap = 0;
+            if (dataGridView7.Rows[CurrentIndex].Cells[0].Value != null)
+            {
+                String maPN = dataGridView7.Rows[CurrentIndex].Cells[0].Value.ToString();
+                maPhieuNhap = Int32.Parse(maPN);
+                textBox30.Text = maPN;
+            }
+            if (dataGridView7.Rows[CurrentIndex].Cells[2].Value != null)
+            {
+                String maNCC = dataGridView7.Rows[CurrentIndex].Cells[2].Value.ToString();
+                textBox28.Text = maNCC;
+            }
+            if (dataGridView7.Rows[CurrentIndex].Cells[3].Value != null)
+            {
+                String maKho = dataGridView7.Rows[CurrentIndex].Cells[3].Value.ToString();
+                textBox25.Text = maKho;
+            }
+            if (dataGridView7.Rows[CurrentIndex].Cells[1].Value != null)
+            {
+                String value = dataGridView7.Rows[CurrentIndex].Cells[1].Value.ToString();
+                String[] datetime = value.Split('/', ' ');
+                DateTime date = new DateTime(Int32.Parse(datetime[2]), Int32.Parse(datetime[0]), Int32.Parse(datetime[1]));
+                dateTimePicker1.Value = date;
+            }
+
+            DataView table = PhieuNhap_detail(maPhieuNhap);
+            dataGridView8.DataSource = table;
+        }
+
+        private DataView PhieuNhap_detail(int mapn)
+        {
+            return ChiTietPhieuNhap_BUS.chiTietPhieuNhap_find(mapn);
+        }
+
+        private void dataGridView8_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int CurrentIndex = dataGridView8.CurrentCell.RowIndex;
+            
+            if (dataGridView8.Rows[CurrentIndex].Cells[0].Value != null)
+            {
+                String maPN = dataGridView8.Rows[CurrentIndex].Cells[0].Value.ToString();
+                textBox34.Text = maPN;
+            }
+            if (dataGridView8.Rows[CurrentIndex].Cells[1].Value != null)
+            {
+                String mahang = dataGridView8.Rows[CurrentIndex].Cells[1].Value.ToString();
+                textBox33.Text = mahang;
+            }
+            if (dataGridView8.Rows[CurrentIndex].Cells[2].Value != null)
+            {
+                String soluong = dataGridView8.Rows[CurrentIndex].Cells[2].Value.ToString();
+                textBox32.Text = soluong;
+            }
+            if (dataGridView8.Rows[CurrentIndex].Cells[3].Value != null)
+            {
+                String soluong = dataGridView8.Rows[CurrentIndex].Cells[3].Value.ToString();
+                textBox31.Text = soluong;
+            }
+            if (dataGridView8.Rows[CurrentIndex].Cells[4].Value != null)
+            {
+                String gia = dataGridView8.Rows[CurrentIndex].Cells[4].Value.ToString();
+                textBox29.Text = gia;
+            }
+        }
+
+        private void clearCTPNText()
+        {
+            textBox34.Text = "";
+            textBox33.Text = "";
+            textBox32.Text = "";
+            textBox31.Text = "";
+            textBox29.Text = "";
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if (button24.Text.Equals("Thêm"))
+            {
+                button24.Text = "Lưu";
+                button23.Text = "Hủy";
+                enableCTPN(false, true, true, true, true);
+                clearCTPNText();
+            }
+            else if (button24.Text.Equals("Hủy"))
+            {
+                button24.Text = "Thêm";
+                button23.Text = "Sửa";
+                enableCTPN(false, false, false, false, false);
+                clearCTPNText();
+            }
+            else if (button24.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    if (textBox33.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập mã hàng");
+                        return;
+                    }
+                    if (textBox32.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập số lượng");
+                        return;
+                    }
+                    if (textBox31.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập số lượng thực");
+                        return;
+                    }
+                    if (textBox29.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập đơn giá");
+                        return;
+                    }
+                    int mapn = Int32.Parse(textBox30.Text);
+                    int mahang = Int32.Parse(textBox33.Text);
+                    int slgia = Int32.Parse(textBox32.Text);
+                    int slthuc = Int32.Parse(textBox31.Text);
+                    int dongia = Int32.Parse(textBox29.Text);
+                    ChiTietPhieuNhap ctpn = new ChiTietPhieuNhap(mapn, mahang, slgia, slthuc, dongia);
+                    bool result = ChiTietPhieuNhap_BUS.insert(ctpn);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Thêm thành công");
+                    }
+                    enableCTPN(false, false, false, false, false);
+                    clearCTPNText();
+                    DataView table = PhieuNhap_detail(Int32.Parse(textBox30.Text));
+                    dataGridView8.DataSource = table;
+                    button24.Text = "Thêm";
+                    button23.Text = "Sửa";
+            }
+                catch
+            {
+                System.Windows.Forms.MessageBox.Show("mã hàng không tồn tại hoặc phiếu nhập đã tồn tại, vui lòng kiểm tra lại");
+                enableCTPN(false, false, false, false, false);
+                clearCTPNText();
+                button24.Text = "Thêm";
+                button23.Text = "Sửa";
+            }
+
+        }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (button23.Text.Equals("Sửa"))
+            {
+                if (textBox34.Text.Trim() == "")
+                {
+                    System.Windows.Forms.MessageBox.Show("Chọn 1 bản ghi để sửa");
+                    return;
+                }
+                button23.Text = "Lưu";
+                button24.Text = "Hủy";
+                enableCTPN(false, true, true, true, true);
+            }
+            else if (button23.Text.Equals("Hủy"))
+            {
+                button24.Text = "Thêm";
+                button23.Text = "Sửa";
+                enableCTPN(false, false, false, false, false);
+                clearCTPNText();
+            }
+            else if (button23.Text.Equals("Lưu"))
+            {
+                try
+                {
+                    if (textBox33.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập mã hàng");
+                        return;
+                    }
+                    if (textBox32.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập số lượng");
+                        return;
+                    }
+                    if (textBox31.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập số lượng thực");
+                        return;
+                    }
+                    if (textBox29.Text.Trim() == "")
+                    {
+                        System.Windows.Forms.MessageBox.Show("vui lòng nhập đơn giá");
+                        return;
+                    }
+                    int mapn = Int32.Parse(textBox34.Text);
+                    int mahang = Int32.Parse(textBox33.Text);
+                    int slgia = Int32.Parse(textBox32.Text);
+                    int slthuc = Int32.Parse(textBox31.Text);
+                    int dongia = Int32.Parse(textBox29.Text);
+                    ChiTietPhieuNhap ctpn = new ChiTietPhieuNhap(mapn, mahang, slgia, slthuc, dongia);
+                    bool result = ChiTietPhieuNhap_BUS.update(ctpn);
+                    if (result)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Sửa thành công");
+                    }
+                    enableCTPN(false, false, false, false, false);
+                    clearCTPNText();
+                    DataView table = PhieuNhap_detail(Int32.Parse(textBox30.Text));
+                    dataGridView8.DataSource = table;
+                    button24.Text = "Thêm";
+                    button23.Text = "Sửa";
+                }
+                catch
+                {
+                    System.Windows.Forms.MessageBox.Show("Lỗi không xác định");
+                    enableCTPN(false, false, false, false, false);
+                    clearCTPNText();
+                    button24.Text = "Thêm";
+                    button23.Text = "Sửa";
+                }
+
+            }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (textBox34.Text.Trim() == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Vui lòng một phiếu nhập để xóa");
+                return;
+            }
+            int mapn = Int32.Parse(textBox34.Text);
+            bool result = ChiTietPhieuNhap_BUS.delete(mapn);
+            if (result)
+            {
+                System.Windows.Forms.MessageBox.Show("Xóa phiếu nhập thành công");
+            }
+            DataView table = PhieuNhap_detail(Int32.Parse(textBox34.Text));
+            dataGridView8.DataSource = table;
+            clearCTPNText();
         }
     }
 

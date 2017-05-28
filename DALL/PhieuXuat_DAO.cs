@@ -15,7 +15,7 @@ namespace DALL
         public static DataView PhieuXuat_getAll()
         {
             SqlConnection connection = SqlConnect.Connect();
-
+            connection.Open();
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = new SqlCommand("PhieuXuat_getAll", connection);
             da.SelectCommand.CommandType = CommandType.StoredProcedure;
