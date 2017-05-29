@@ -2151,6 +2151,7 @@
             this.dgvChiTietVatTu.Size = new System.Drawing.Size(684, 505);
             this.dgvChiTietVatTu.TabIndex = 5;
             this.dgvChiTietVatTu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietVatTu_CellClick);
+            this.dgvChiTietVatTu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietVatTu_CellContentClick);
             // 
             // MA_HANG
             // 

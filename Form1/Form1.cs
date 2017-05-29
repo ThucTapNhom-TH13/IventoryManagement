@@ -76,16 +76,18 @@ namespace Form1
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("sp_chitietvatlieu", conn);
+                SqlCommand cmd = new SqlCommand("sp_chitietvattu", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                SqlParameter p = new SqlParameter("@MAPHIEU", cmbMa_PN.Text);
+                SqlParameter p = new SqlParameter("@MAPHIEUNHAP", cmbMa_PN.Text);
+                cmd.Parameters.Add(p);
+                p = new SqlParameter("@MAPHIEUXUAT", cmbMa_PX.Text);
                 cmd.Parameters.Add(p);
 
                 p = new SqlParameter("@NGAY", dtpNgay_CTVT.Text);
                 cmd.Parameters.Add(p);
 
 
-                p = new SqlParameter("@LUONGNHAP", txtLuongXuat_CTVT.Text);
+                p = new SqlParameter("@LUONGNHAP", txtLuongNhap_CTVT.Text);
                 cmd.Parameters.Add(p);
                 p = new SqlParameter("@LUONGXUAT", txtLuongXuat_CTVT.Text);
                 cmd.Parameters.Add(p);
@@ -111,12 +113,15 @@ namespace Form1
             SqlCommand cmd = new SqlCommand("sp_SuaPhong", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter p = new SqlParameter("@MAPHIEU", cmbMaHang.Text);
+            SqlParameter p = new SqlParameter("@MAHANG", cmbMaHang.Text);
             cmd.Parameters.Add(p);
 
             p = new SqlParameter("@NGAY", dtpNgay_CTVT.Text);
             cmd.Parameters.Add(p);
-
+            p = new SqlParameter("@MAPHIEUNHAP", cmbMa_PN.Text);
+            cmd.Parameters.Add(p);
+            p = new SqlParameter("@MAPHIEUXUAT", cmbMa_PX.Text);
+            cmd.Parameters.Add(p);
 
             p = new SqlParameter("@LUONGNHAP",txtLuongXuat_CTVT.Text);
             cmd.Parameters.Add(p);
@@ -2028,12 +2033,17 @@ namespace Form1
         private void dgvChiTietVatTu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             cmbMaHang.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["MA_HANG"].Value);
-            cmbMa_PN.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["MA_PHIEU"].Value);
-         
-            
+            cmbMa_PN.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["MA_PN"].Value);
+            cmbMa_PX.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["MA_PX"].Value);
+
             txtLuongNhap_CTVT.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["LUONG_NHAP"].Value);
             txtLuongXuat_CTVT.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["LUONG_XUAT"].Value);
             txtTonDK_CTVT.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["TON_DK"].Value);
+        }
+
+        private void dgvChiTietVatTu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 
