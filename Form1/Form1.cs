@@ -32,9 +32,6 @@ namespace Form1
             Enabal_Kho();
             showKhoHang();
             buildingKho();
-            Enabal();
-            showCTVT();
-            buildingCTVT();
             Enabal_hh();
             showHangHoa();
             buildingHangHoa();
@@ -44,7 +41,6 @@ namespace Form1
             Enabal_LH();
             showLoaiHang();
             buildingLoaiHang();
-            thongke();
         }
         /// <summary>
         /// CTVT
@@ -68,242 +64,20 @@ namespace Form1
 
         }
 
-        public void showCTVT()
-        {
-            dgvChiTietVatTu.DataSource = CTVT_BUS.loadCTVT();
-        }
-        public void thongke()
-        {
-            dgvThongke.DataSource = CTVT_BUS.ThongKe();
-        }
-        public void clearData()
-        {
-            txtLuongXuat_CTVT.Text = "";
-            txtLuongNhap_CTVT.Text = "";
-            txtTonDK_CTVT.Text = "";
-        }
-        public void Enabal()
-        {
-            cmbMaHang.Enabled = false;
-            cmbMa_PN.Enabled = false;
-            cmbMa_PX.Enabled = false;
-            txtLuongNhap_CTVT.Enabled = false;
-            txtLuongXuat_CTVT.Enabled = false;
-            txtTonDK_CTVT.Enabled = false;
-            dtpNgay_CTVT.Enabled = false;
-        }
-        public void unEnable()
-        {
-            cmbMaHang.Enabled = true;
-            cmbMa_PN.Enabled = true;
-            cmbMa_PX.Enabled = true;
-            txtLuongNhap_CTVT.Enabled = true;
-            txtLuongXuat_CTVT.Enabled = true;
-            txtTonDK_CTVT.Enabled = true;
-            dtpNgay_CTVT.Enabled = true;
-        }
-        public void buildingCTVT()
-        {
-            cmbMaHang.DataBindings.Clear();
-            cmbMaHang.DataBindings.Add("Text", dgvChiTietVatTu.DataSource, "MA_HANG");
-            cmbMa_PN.DataBindings.Clear();
-            cmbMa_PN.DataBindings.Add("Text", dgvChiTietVatTu.DataSource, "MA_PN");
-            cmbMa_PX.DataBindings.Clear();
-            cmbMa_PX.DataBindings.Add("Text", dgvChiTietVatTu.DataSource, "MA_PX");
-            txtLuongNhap_CTVT.DataBindings.Clear();
-            txtLuongNhap_CTVT.DataBindings.Add("Text", dgvChiTietVatTu.DataSource, "LUONG_NHAP");
-            txtLuongXuat_CTVT.DataBindings.Clear();
-            txtLuongXuat_CTVT.DataBindings.Add("Text", dgvChiTietVatTu.DataSource, "LUONG_XUAT");
-            txtTonDK_CTVT.DataBindings.Clear();
-            txtTonDK_CTVT.DataBindings.Add("Text", dgvChiTietVatTu.DataSource, "TON_DK");
-            dtpNgay_CTVT.DataBindings.Clear();
-            dtpNgay_CTVT.DataBindings.Add("Text", dgvChiTietVatTu.DataSource, "NGAY");
-        }
+        
         
         private void btnThem_CTVT_Click(object sender, EventArgs e)
         {
-            if (btnThem_CTVT.Text == "Thêm")
-            {
-                unEnable();
-                clearData();
-                errorCTVT.Clear();
-                cmbMaHang.DataBindings.Clear();
-                cmbMa_PN.DataBindings.Clear();
-                cmbMa_PX.DataBindings.Clear();
-                cmbMaHang.DataSource = Hanghoa_BUS.getHangHoa().Tables[0];
-                cmbMaHang.DisplayMember = "MA_HANG";
-                cmbMa_PN.DataSource = PhieuNhap_BUS.getMaPN().Tables[0];
-                cmbMa_PN.DisplayMember = "MA_PN";
-                cmbMa_PX.DataSource = PhieuXuat_BUS.getPX().Tables[0];
-                cmbMa_PX.DisplayMember = "MA_PX";
-                btnThem_CTVT.Text = "Lưu";
-                btnSua_CTVT.Text = "Cannel";
-                btnXoa_CTVT.Visible = false;
-                txtLuongNhap_CTVT.Text = "0";
-                txtLuongXuat_CTVT.Text= "0";
-
-            }
-            else if (btnThem_CTVT.Text == "Lưu")
-            {
-                btnThem_CTVT.Text = "Thêm";
-                btnSua_CTVT.Text = "Sửa";
-                btnXoa_CTVT.Visible = true;
-                if (!Catch.cNullTB(cmbMaHang.Text)  & !Catch.cNullTB(txtTonDK_CTVT.Text))
-                {
-                    try
-                    {
-                        int n = 0;
-                        int mahang = Convert.ToInt32(cmbMaHang.Text.Trim());
-                        int mapn = Convert.ToInt32(cmbMa_PN.Text.Trim());
-                        int mapx = Convert.ToInt32(cmbMa_PX.Text.Trim());
-                        int luongxuat = Convert.ToInt32(txtLuongXuat_CTVT.Text.Trim());
-                        DateTime ngay = Convert.ToDateTime(dtpNgay_CTVT.Text.Trim());
-                        int luongnhap = Convert.ToInt32(txtLuongNhap_CTVT.Text.Trim());
-                        int tondk = Convert.ToInt32(txtTonDK_CTVT.Text.Trim());
-                       
-                        tblChiTietVatTu ctvt = new tblChiTietVatTu(mahang, mapn, mapx, ngay, luongnhap, luongxuat, tondk);
-                        CTVT_BUS.addCTVT(ctvt);
-                        showCTVT();
-                        buildingCTVT();
-                        Enabal();
-                    }
-                    catch
-                    {
-                        int n = 0;
-                        if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false && txtLuongXuat_CTVT.Text.Trim().Length != 0)
-                        {
-                            errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập số");
-                        }
-                        if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false && txtLuongNhap_CTVT.Text.Trim().Length != 0)
-                        {
-                            errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập số");
-                        }
-
-                        if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
-                        {
-                            errorCTVT.SetError(txtTonDK_CTVT, "không được nhập số");
-                        }
-                        MessageBox.Show("Loi");
-                    }
-                }
-                else
-                {
-                    
-                    if (txtTonDK_CTVT.Text.Trim().Length == 0)
-                    {
-                        errorCTVT.SetError(txtTonDK_CTVT, "không được bỏ trống");
-                    }
-                }
-                Enabal();
-            }
-            else if (btnThem_CTVT.Text == "Lưu ")
-            {
-                btnThem_CTVT.Text = "Thêm";
-                btnSua_CTVT.Text = "Sửa";
-                btnXoa_CTVT.Visible = true;
-                if (!Catch.cNullTB(cmbMaHang.Text) &  !Catch.cNullTB(txtLuongXuat_CTVT.Text) & !Catch.cNullTB(txtLuongNhap_CTVT.Text) & !Catch.cNullTB(txtTonDK_CTVT.Text))
-                {
-                    try
-                    {
-                        int mahang = Convert.ToInt32(cmbMaHang.Text.Trim());
-                        int mapn = Convert.ToInt32(cmbMa_PN.Text.Trim());
-                        int mapx = Convert.ToInt32(cmbMa_PX.Text.Trim());
-                        int luongxuat = Convert.ToInt32(txtLuongXuat_CTVT.Text.Trim());
-                        DateTime ngay = Convert.ToDateTime(dtpNgay_CTVT.Text.Trim());
-                        int luongnhap = Convert.ToInt32(txtLuongNhap_CTVT.Text.Trim());
-                        int tondk = Convert.ToInt32(txtTonDK_CTVT.Text.Trim());
-
-                        tblChiTietVatTu ctvt = new tblChiTietVatTu(mahang, mapn,mapx, ngay, luongnhap, luongxuat, tondk);
-                        CTVT_BUS.updateCTVT(ctvt);
-                        showCTVT();
-                        buildingCTVT();
-                        Enabal();
-                    }
-                    catch
-                    {
-                        int n = 0;
-                        if (int.TryParse(txtLuongXuat_CTVT.Text.Trim(), out n) == false)
-                        {
-                            errorCTVT.SetError(txtLuongXuat_CTVT, "không được nhập chữ");
-                        }
-                        if (int.TryParse(txtLuongNhap_CTVT.Text.Trim(), out n) == false)
-                        {
-                            errorCTVT.SetError(txtLuongNhap_CTVT, "không được nhập chữ");
-                        }
-                        if (int.TryParse(txtTonDK_CTVT.Text.Trim(), out n) == false)
-                        {
-                            errorCTVT.SetError(txtTonDK_CTVT, "không được nhập chữ");
-                        }
-                        MessageBox.Show("Loi");
-                    }
-                }
-                else
-                {
-
-                    if (txtTonDK_CTVT.Text.Trim().Length == 0)
-                    {
-                        errorCTVT.SetError(txtTonDK_CTVT, "không được bỏ trống");
-                    }
-                }
-                Enabal();
-            }
+           
         }
 
         private void btnSua_CTVT_Click(object sender, EventArgs e)
         {
-            if (btnSua_CTVT.Text == "Sửa")
-            {
-                unEnable();
-                errorCTVT.Clear();
-                cmbMaHang.DataBindings.Clear();
-                cmbMa_PN.DataBindings.Clear();
-                cmbMa_PX.DataBindings.Clear();
-                cmbMaHang.DataSource = Hanghoa_BUS.getHangHoa().Tables[0];
-                cmbMaHang.DisplayMember = "MA_HANG";
-                cmbMaHang.ValueMember = "MA_HANG";
-                cmbMa_PN.DataSource = PhieuNhap_BUS.getMaPN().Tables[0];
-                cmbMa_PN.DisplayMember = "MA_PN";
-                cmbMa_PN.ValueMember = "MA_PN";
-                cmbMa_PX.DataSource = PhieuXuat_BUS.getPX().Tables[0];
-                cmbMa_PX.DisplayMember = "MA_PX";
-                cmbMa_PX.ValueMember = "MA_PX";
-                cmbMaHang.Enabled = false;
-                cmbMa_PN.Enabled = false;
-                cmbMa_PX.Enabled = false;
-                btnThem_CTVT.Text = "Lưu ";
-                btnSua_CTVT.Text = "Cannel";
-                btnXoa_CTVT.Visible = false;
-                txtLuongNhap_CTVT.Text = "0";
-                txtLuongXuat_CTVT.Text= "0";
-            }
-            else
-            {
-                btnThem_CTVT.Text = "Thêm";
-                btnSua_CTVT.Text = "Sửa";
-                btnXoa_CTVT.Visible = true;
-                Enabal();
-                showCTVT();
-                buildingCTVT();
-            }
+           
         }
 
         private void btnXoa_CTVT_Click(object sender, EventArgs e)
         {
-            if (!Catch.cNullTB(cmbMaHang.Text) )
-            {
-                int mahang = Convert.ToInt32(cmbMaHang.Text);
-                int mapn = Convert.ToInt32(cmbMa_PN.Text);
-                int mapx= Convert.ToInt32(cmbMa_PN.Text);
-                CTVT_BUS.deleteCTVT(mahang,mapx, mapn);
-                showCTVT();
-                buildingCTVT();
-                Enabal();
-
-            }
-            else
-            {
-                MessageBox.Show("Chưa nhập dữ liệu");
-            }
         }
 
         /// H.Linh - added

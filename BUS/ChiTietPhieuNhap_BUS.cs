@@ -14,10 +14,7 @@ namespace BUS
         {
             return DALL.ChiTietPhieuNhap_DAO.chiTietPhieuNhap_find(mapn);
         }
-        public static DataSet getsoluongnhap(int mapn)
-        {
-            return ChiTietPhieuNhap_DAO.getsoluong( mapn);
-        }
+    
         public static bool insert(ChiTietPhieuNhap ctpn)
         {
             return DALL.ChiTietPhieuNhap_DAO.insert(ctpn);

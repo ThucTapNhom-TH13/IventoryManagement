@@ -11,11 +11,6 @@ namespace BUS
 {
     public class PhieuNhap_BUS
     {
-        public static DataSet getMaPN()
-        {
-            return PhieuNhap_DAL.getPhieuNhap();
-        }
-
         public static DataView PhieuNhap_getAll()
         {
             return PhieuNhap_DAL.PhieuNhap_getAll();

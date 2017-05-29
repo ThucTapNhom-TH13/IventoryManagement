@@ -15,10 +15,6 @@ namespace BUS
             int maPhieuXuat = Convert.ToInt32(mapx);
             return DALL.ChiTietPhieuXuat_DAO.chiTietPhieuXuat_findOne(maPhieuXuat);
         }
-        public static DataSet getsoluongxuat(int mapx)
-        {
-            return ChiTietPhieuXuat_DAO.getsoluong(mapx);
-        }
         public static Boolean add(ChiTietPhieuXuat chiTiet)
         {
             return DALL.ChiTietPhieuXuat_DAO.add(chiTiet);
