@@ -40,3 +40,15 @@ C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\Form1\obj\Debug\Form
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\Form1.exe.config
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.exe
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\Form1.exe
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\Form1.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\BUS.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\Entity.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\DALL.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\BUS.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\Entity.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\bin\Debug\DALL.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.csprojResolveAssemblyReference.cache
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.Form1.resources
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.Properties.Resources.resources
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.csproj.GenerateResource.Cache

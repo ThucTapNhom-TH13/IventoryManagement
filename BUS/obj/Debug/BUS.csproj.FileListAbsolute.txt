@@ -16,3 +16,12 @@ C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\bin\Debug\Entity
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.dll
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\BUS\obj\Debug\BUS.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\bin\Debug\BUS.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\bin\Debug\BUS.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\bin\Debug\DALL.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\bin\Debug\Entity.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\bin\Debug\DALL.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\bin\Debug\Entity.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\obj\Debug\BUS.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\obj\Debug\BUS.pdb

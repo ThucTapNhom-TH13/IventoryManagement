@@ -12,3 +12,10 @@ C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\bin\Debug\Entit
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.csprojResolveAssemblyReference.cache
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.dll
 C:\Users\Linh\Documents\ThucTapNhom-TH13-IventoryManagement\DALL\obj\Debug\DALL.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\DALL\bin\Debug\DALL.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\DALL\bin\Debug\DALL.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\DALL\bin\Debug\Entity.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\DALL\bin\Debug\Entity.pdb
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\DALL\obj\Debug\DALL.csprojResolveAssemblyReference.cache
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\DALL\obj\Debug\DALL.dll
+C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\DALL\obj\Debug\DALL.pdb
