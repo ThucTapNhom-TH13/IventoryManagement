@@ -1,0 +1,36 @@
+create PROCEDURE  [dbo].[sp_chitietvattu]
+(   @MAPHIEUXUAT int,
+	@MAPHIEUNHAP int,
+	 @NGAY datetime,
+     @LUONGNHAP int,
+	 @LUONGXUAT int,
+	 @TONDK int
+ )
+AS
+INSERT INTO Chi_Tiet_Vat_Tu(MA_PN,MA_PX,NGAY,LUONG_NHAP,LUONG_XUAT,TON_DK)
+VALUES(@MAPHIEUNHAP,@MAPHIEUXUAT,@NGAY,@LUONGNHAP,@LUONGXUAT,@TONDK);
+
+create proc  [dbo].[SP_XoaPhong]
+(
+     @Ma int
+)
+AS
+begin
+DELETE Chi_Tiet_Vat_Tu
+WHERE MA_HANG= @Ma;
+end
+
+create PROC  [dbo].[SP_SuaPhong]
+(
+	@MAHANG int,
+	 @MAPHIEUXUAT int,
+	@MAPHIEUNHAP int,
+	 @NGAY datetime,
+     @LUONGNHAP int,
+	 @LUONGXUAT int,
+	 @TONDK int
+     )
+AS
+UPDATE Chi_Tiet_Vat_Tu
+SET MA_PX = @MAPHIEUXUAT,MA_PN=@MAPHIEUNHAP,NGAY=@NGAY,LUONG_NHAP=@LUONGNHAP,LUONG_XUAT=@LUONGXUAT,TON_DK=@TONDK
+ WHERE MA_HANG= @MAHANG;
