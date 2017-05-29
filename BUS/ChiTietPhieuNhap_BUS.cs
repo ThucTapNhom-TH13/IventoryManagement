@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
-
+using DALL;
 namespace BUS
 {
     public class ChiTietPhieuNhap_BUS
@@ -14,7 +14,10 @@ namespace BUS
         {
             return DALL.ChiTietPhieuNhap_DAO.chiTietPhieuNhap_find(mapn);
         }
-
+        public static DataSet getsoluongnhap(int mapn)
+        {
+            return ChiTietPhieuNhap_DAO.getsoluong( mapn);
+        }
         public static bool insert(ChiTietPhieuNhap ctpn)
         {
             return DALL.ChiTietPhieuNhap_DAO.insert(ctpn);

@@ -25,7 +25,20 @@ namespace DALL
             DataView dv = new DataView(dt);
             return dv;
         }
-        
+        public static DataSet getsoluong(int mapx)
+        {
+            SqlConnection conn = SqlConnect.Connect();
+            SqlCommand command = new SqlCommand("SELECT SL_YEU_CAU FROM Chi_Tiet_Phieu_Xuat where MA_PX=@MA_PX ", conn);
+            conn.Open();
+            command.Parameters.Add("@LOAI_HANG", SqlDbType.Int);
+            command.Parameters["@LOAI_HANG"].Value = mapx;
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.SelectCommand = command;
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
         public static bool delete(int mahang)
         {
             SqlConnection connection = SqlConnect.Connect();

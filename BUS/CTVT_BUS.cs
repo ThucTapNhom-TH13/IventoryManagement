@@ -14,6 +14,10 @@ namespace BUS
         {
             return ChiTietVatTu_DALL.loadChiTietVatTu();
         }
+        public static DataTable ThongKe()
+        {
+            return ChiTietVatTu_DALL.thongke();
+        }
         public static void addCTVT(tblChiTietVatTu ctvt)
         {
             ChiTietVatTu_DALL.ThemCTVT(ctvt);

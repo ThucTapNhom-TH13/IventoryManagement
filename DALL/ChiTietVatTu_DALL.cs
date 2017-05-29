@@ -23,6 +23,18 @@ namespace DALL
             conn.Close();
             return dt;
         }
+        public static DataTable thongke()
+        {
+            SqlConnection conn = SqlConnect.Connect();
+            SqlCommand command = new SqlCommand("SELECT MA_HANG, SUM(LUONG_NHAP)AS TongNhap, SUM(LUONG_XUAT) AS TongXuat,TON_DK FROM Chi_Tiet_Vat_Tu group by MA_HANG,TON_DK", conn);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            da.SelectCommand = command;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            return dt;
+        }
         public static void ThemCTVT(tblChiTietVatTu ctvt)
         {
             SqlConnection conn = SqlConnect.Connect();
