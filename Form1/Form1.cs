@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using Entity;
+using System.Data.SqlClient;
+
 namespace Form1
 {
     public partial class Form1 : Form
@@ -17,9 +19,13 @@ namespace Form1
         {
             InitializeComponent();
         }
-        
+        public string strConnection = @"Data Source=LINH\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True";
+        public SqlConnection conn = null;
         private void Form1_Load(object sender, EventArgs e)
         {
+            conn = new SqlConnection(strConnection);
+            conn.Open();
+            loadData();
             PhieuXuat_initTextboxStatus(false, false);
             Load_BangPhieuXuat();
             NhaCungCapTab_enableTextbox(false, false);
@@ -68,16 +74,89 @@ namespace Form1
         
         private void btnThem_CTVT_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_chitietvatlieu", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter p = new SqlParameter("@MAPHIEU", cmbMa_PN.Text);
+                cmd.Parameters.Add(p);
+
+                p = new SqlParameter("@NGAY", dtpNgay_CTVT.Text);
+                cmd.Parameters.Add(p);
+
+
+                p = new SqlParameter("@LUONGNHAP", txtLuongXuat_CTVT.Text);
+                cmd.Parameters.Add(p);
+                p = new SqlParameter("@LUONGXUAT", txtLuongXuat_CTVT.Text);
+                cmd.Parameters.Add(p);
+                p = new SqlParameter("@TONDK", txtTonDK_CTVT.Text);
+                cmd.Parameters.Add(p);
+                int count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    MessageBox.Show("Thêm mới thành công");
+                    loadData();
+                }
+
+                else MessageBox.Show("Không thể thêm mới");
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnSua_CTVT_Click(object sender, EventArgs e)
         {
-           
+            SqlCommand cmd = new SqlCommand("sp_SuaPhong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter p = new SqlParameter("@MAPHIEU", cmbMaHang.Text);
+            cmd.Parameters.Add(p);
+
+            p = new SqlParameter("@NGAY", dtpNgay_CTVT.Text);
+            cmd.Parameters.Add(p);
+
+
+            p = new SqlParameter("@LUONGNHAP",txtLuongXuat_CTVT.Text);
+            cmd.Parameters.Add(p);
+            p = new SqlParameter("@LUONGXUAT", txtLuongXuat_CTVT.Text);
+            cmd.Parameters.Add(p);
+            p = new SqlParameter("@TONDK", txtTonDK_CTVT.Text);
+            cmd.Parameters.Add(p);
+
+
+            int count = cmd.ExecuteNonQuery();
+
+            if (count > 0)
+            {
+                MessageBox.Show("Sửa thành công!");
+                loadData();
+            }
+            else MessageBox.Show("Không sửa được!");
         }
 
         private void btnXoa_CTVT_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Bạn có chắc chắn muôn xóa bản ghi đang chọn không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("sp_XoaPhong", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter p = new SqlParameter("@Ma", cmbMaHang.Text);
+                cmd.Parameters.Add(p);
+
+                int count = cmd.ExecuteNonQuery();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Xóa thành công!");
+                    loadData();
+                   
+
+                }
+                else MessageBox.Show("Không thể xóa bản ghi hiện thời!");
+            }
         }
 
         /// H.Linh - added
@@ -1933,6 +2012,28 @@ namespace Form1
             DataView table = PhieuNhap_detail(Int32.Parse(textBox34.Text));
             dataGridView8.DataSource = table;
             clearCTPNText();
+        }
+        private void loadData()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT* FROM Chi_Tiet_Vat_Tu", conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgvChiTietVatTu.DataSource = dt;
+        }
+        private void tabPage8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvChiTietVatTu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cmbMaHang.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["MA_HANG"].Value);
+            cmbMa_PN.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["MA_PHIEU"].Value);
+         
+            
+            txtLuongNhap_CTVT.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["LUONG_NHAP"].Value);
+            txtLuongXuat_CTVT.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["LUONG_XUAT"].Value);
+            txtTonDK_CTVT.Text = Convert.ToString(dgvChiTietVatTu.CurrentRow.Cells["TON_DK"].Value);
         }
     }
 
