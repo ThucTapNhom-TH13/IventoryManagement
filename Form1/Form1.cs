@@ -19,7 +19,7 @@ namespace Form1
         {
             InitializeComponent();
         }
-        public string strConnection = @"Data Source=LINH\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True";
+        public string strConnection = @"Data Source=DESKTOP-6ABMGHP\SQLEXPRESS;Initial Catalog=InventoryManagerment;Integrated Security=True";
         public SqlConnection conn = null;
         private void Form1_Load(object sender, EventArgs e)
         {
