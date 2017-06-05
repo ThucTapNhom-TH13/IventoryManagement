@@ -18,3 +18,8 @@ C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Entity\bin\Debug\Entity
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Entity\obj\Debug\Entity.dll
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Entity\obj\Debug\Entity.pdb
+D:\Github\IventoryManagement\Entity\bin\Debug\Entity.dll
+D:\Github\IventoryManagement\Entity\bin\Debug\Entity.pdb
+D:\Github\IventoryManagement\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+D:\Github\IventoryManagement\Entity\obj\Debug\Entity.dll
+D:\Github\IventoryManagement\Entity\obj\Debug\Entity.pdb

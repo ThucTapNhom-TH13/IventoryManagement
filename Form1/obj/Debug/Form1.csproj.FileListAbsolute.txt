@@ -52,3 +52,18 @@ C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.c
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.Form1.resources
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.Properties.Resources.resources
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\Form1\obj\Debug\Form1.csproj.GenerateResource.Cache
+D:\Github\IventoryManagement\Form1\bin\Debug\Form1.exe.config
+D:\Github\IventoryManagement\Form1\obj\Debug\Form1.exe
+D:\Github\IventoryManagement\Form1\obj\Debug\Form1.pdb
+D:\Github\IventoryManagement\Form1\bin\Debug\Form1.exe
+D:\Github\IventoryManagement\Form1\bin\Debug\Form1.pdb
+D:\Github\IventoryManagement\Form1\bin\Debug\BUS.dll
+D:\Github\IventoryManagement\Form1\bin\Debug\Entity.dll
+D:\Github\IventoryManagement\Form1\bin\Debug\DALL.dll
+D:\Github\IventoryManagement\Form1\bin\Debug\BUS.pdb
+D:\Github\IventoryManagement\Form1\bin\Debug\Entity.pdb
+D:\Github\IventoryManagement\Form1\bin\Debug\DALL.pdb
+D:\Github\IventoryManagement\Form1\obj\Debug\Form1.csprojResolveAssemblyReference.cache
+D:\Github\IventoryManagement\Form1\obj\Debug\Form1.Form1.resources
+D:\Github\IventoryManagement\Form1\obj\Debug\Form1.Properties.Resources.resources
+D:\Github\IventoryManagement\Form1\obj\Debug\Form1.csproj.GenerateResource.Cache

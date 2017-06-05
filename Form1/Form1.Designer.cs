@@ -163,9 +163,9 @@
             this.SL_THUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DON_GIA_CT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
+            this.buttonXoaPhieuNhap = new System.Windows.Forms.Button();
+            this.buttonSuaPhieuNhap = new System.Windows.Forms.Button();
+            this.buttonThemPhieuNhap = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label26 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -243,13 +243,13 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.txtLuongNhap_CTVT = new System.Windows.Forms.TextBox();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.errorKho = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorCTVT = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorKH = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorHH = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorLH = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -279,12 +279,12 @@
             this.tabControl2.SuspendLayout();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).BeginInit();
+            this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLH)).BeginInit();
-            this.tabPage10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1584,9 +1584,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button19);
-            this.groupBox4.Controls.Add(this.button20);
-            this.groupBox4.Controls.Add(this.button21);
+            this.groupBox4.Controls.Add(this.buttonXoaPhieuNhap);
+            this.groupBox4.Controls.Add(this.buttonSuaPhieuNhap);
+            this.groupBox4.Controls.Add(this.buttonThemPhieuNhap);
             this.groupBox4.Controls.Add(this.dateTimePicker1);
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.label28);
@@ -1603,35 +1603,35 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Phiếu nhập";
             // 
-            // button19
+            // buttonXoaPhieuNhap
             // 
-            this.button19.Location = new System.Drawing.Point(216, 212);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 31);
-            this.button19.TabIndex = 27;
-            this.button19.Text = "Xóa";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.buttonXoaPhieuNhap.Location = new System.Drawing.Point(216, 212);
+            this.buttonXoaPhieuNhap.Name = "buttonXoaPhieuNhap";
+            this.buttonXoaPhieuNhap.Size = new System.Drawing.Size(75, 31);
+            this.buttonXoaPhieuNhap.TabIndex = 27;
+            this.buttonXoaPhieuNhap.Text = "Xóa";
+            this.buttonXoaPhieuNhap.UseVisualStyleBackColor = true;
+            this.buttonXoaPhieuNhap.Click += new System.EventHandler(this.button19_Click);
             // 
-            // button20
+            // buttonSuaPhieuNhap
             // 
-            this.button20.Location = new System.Drawing.Point(110, 212);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 31);
-            this.button20.TabIndex = 26;
-            this.button20.Text = "Sửa";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.buttonSuaPhieuNhap.Location = new System.Drawing.Point(110, 212);
+            this.buttonSuaPhieuNhap.Name = "buttonSuaPhieuNhap";
+            this.buttonSuaPhieuNhap.Size = new System.Drawing.Size(75, 31);
+            this.buttonSuaPhieuNhap.TabIndex = 26;
+            this.buttonSuaPhieuNhap.Text = "Sửa";
+            this.buttonSuaPhieuNhap.UseVisualStyleBackColor = true;
+            this.buttonSuaPhieuNhap.Click += new System.EventHandler(this.button20_Click);
             // 
-            // button21
+            // buttonThemPhieuNhap
             // 
-            this.button21.Location = new System.Drawing.Point(6, 212);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 31);
-            this.button21.TabIndex = 25;
-            this.button21.Text = "Thêm";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.buttonThemPhieuNhap.Location = new System.Drawing.Point(6, 212);
+            this.buttonThemPhieuNhap.Name = "buttonThemPhieuNhap";
+            this.buttonThemPhieuNhap.Size = new System.Drawing.Size(75, 31);
+            this.buttonThemPhieuNhap.TabIndex = 25;
+            this.buttonThemPhieuNhap.Text = "Thêm";
+            this.buttonThemPhieuNhap.UseVisualStyleBackColor = true;
+            this.buttonThemPhieuNhap.Click += new System.EventHandler(this.button21_Click);
             // 
             // dateTimePicker1
             // 
@@ -2376,6 +2376,25 @@
             this.txtLuongNhap_CTVT.Size = new System.Drawing.Size(171, 21);
             this.txtLuongNhap_CTVT.TabIndex = 27;
             // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.webBrowser1);
+            this.tabPage10.Location = new System.Drawing.Point(4, 24);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(1043, 578);
+            this.tabPage10.TabIndex = 8;
+            this.tabPage10.Text = "Hướng dẫn";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1043, 578);
+            this.webBrowser1.TabIndex = 0;
+            // 
             // errorKho
             // 
             this.errorKho.ContainerControl = this;
@@ -2395,25 +2414,6 @@
             // errorLH
             // 
             this.errorLH.ContainerControl = this;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Controls.Add(this.webBrowser1);
-            this.tabPage10.Location = new System.Drawing.Point(4, 24);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1043, 578);
-            this.tabPage10.TabIndex = 8;
-            this.tabPage10.Text = "Hướng dẫn";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1043, 578);
-            this.webBrowser1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -2466,12 +2466,12 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietVatTu)).EndInit();
+            this.tabPage10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCTVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorLH)).EndInit();
-            this.tabPage10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2619,9 +2619,9 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button buttonXoaPhieuNhap;
+        private System.Windows.Forms.Button buttonSuaPhieuNhap;
+        private System.Windows.Forms.Button buttonThemPhieuNhap;
         private System.Windows.Forms.Button CTPX_button3;
         private System.Windows.Forms.Button CTPX_button2;
         private System.Windows.Forms.Button CTPX_button1;

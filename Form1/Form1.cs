@@ -1662,21 +1662,21 @@ namespace Form1
 
         private void button21_Click(object sender, EventArgs e) //them
         {
-            if (button21.Text.Equals("Thêm"))
+            if (buttonThemPhieuNhap.Text.Equals("Thêm"))
             {
-                button21.Text = "Lưu";
-                button20.Text = "Hủy";
+                buttonThemPhieuNhap.Text = "Lưu";
+                buttonSuaPhieuNhap.Text = "Hủy";
                 enablePhieuNhap(false, true, true, true);
                 clearPhieuNhapData();
             }
-            else if (button21.Text.Equals("Hủy"))
+            else if (buttonThemPhieuNhap.Text.Equals("Hủy"))
             {
-                button21.Text = "Thêm";
-                button20.Text = "Sửa";
+                buttonThemPhieuNhap.Text = "Thêm";
+                buttonSuaPhieuNhap.Text = "Sửa";
                 enablePhieuNhap(false, false, false, false);
                 clearPhieuNhapData();
             }
-            else if (button21.Text.Equals("Lưu"))
+            else if (buttonThemPhieuNhap.Text.Equals("Lưu"))
             {
                 try
                 {
@@ -1712,20 +1712,20 @@ namespace Form1
 
         private void button20_Click(object sender, EventArgs e) // sua
         {
-            if (button20.Text.Equals("Sửa"))
+            if (buttonSuaPhieuNhap.Text.Equals("Sửa"))
             {
-                button20.Text = "Lưu";
-                button21.Text = "Hủy";
+                buttonSuaPhieuNhap.Text = "Lưu";
+                buttonThemPhieuNhap.Text = "Hủy";
                 enablePhieuNhap(false, true, true, true);
             }
-            else if (button20.Text.Equals("Hủy"))
+            else if (buttonSuaPhieuNhap.Text.Equals("Hủy"))
             {
-                button21.Text = "Thêm";
-                button20.Text = "Sửa";
+                buttonThemPhieuNhap.Text = "Thêm";
+                buttonSuaPhieuNhap.Text = "Sửa";
                 enablePhieuNhap(false, true, true, true);
                 clearPhieuNhapData();
             }
-            else if (button20.Text.Equals("Lưu"))
+            else if (buttonSuaPhieuNhap.Text.Equals("Lưu"))
             {
                 try
                 {
@@ -1782,6 +1782,10 @@ namespace Form1
 
         private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(dataGridView7.CurrentCell == null)
+            {
+                return;
+            }
             int CurrentIndex = dataGridView7.CurrentCell.RowIndex;
             int maPhieuNhap = 0;
             if (dataGridView7.Rows[CurrentIndex].Cells[0].Value != null)

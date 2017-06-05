@@ -25,3 +25,12 @@ C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\bin\Debug\Entity.pd
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\obj\Debug\BUS.dll
 C:\Users\Nguyen Linh\Documents\GitHub\IventoryManagement\BUS\obj\Debug\BUS.pdb
+D:\Github\IventoryManagement\BUS\bin\Debug\BUS.dll
+D:\Github\IventoryManagement\BUS\bin\Debug\BUS.pdb
+D:\Github\IventoryManagement\BUS\bin\Debug\DALL.dll
+D:\Github\IventoryManagement\BUS\bin\Debug\Entity.dll
+D:\Github\IventoryManagement\BUS\bin\Debug\DALL.pdb
+D:\Github\IventoryManagement\BUS\bin\Debug\Entity.pdb
+D:\Github\IventoryManagement\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\Github\IventoryManagement\BUS\obj\Debug\BUS.dll
+D:\Github\IventoryManagement\BUS\obj\Debug\BUS.pdb
